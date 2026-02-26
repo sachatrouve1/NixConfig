@@ -1,26 +1,23 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 {
   imports = [
-      ./hardware-configuration.nix
-      modules/bluetooth.nix
-      modules/greetd.nix
-      modules/nvidia.nix
-      modules/thunar.nix
-      modules/gaming.nix
-      modules/battery.nix
-      modules/thinkfan.nix
-      modules/docker.nix
-      # modules/virtualbox.nix
-      modules/prismlauncher.nix
-      modules/wine.nix
-      modules/audio.nix
-      modules/services.nix
-    ];
+    ./hardware-configuration.nix
+    modules/bluetooth.nix
+    modules/greetd.nix
+    modules/nvidia.nix
+    modules/thunar.nix
+    modules/gaming.nix
+    modules/battery.nix
+    modules/thinkfan.nix
+    modules/docker.nix
+    modules/prismlauncher.nix
+    modules/wine.nix
+    modules/audio.nix
+    modules/services.nix
+    modules/nix-ld.nix
+    modules/virtual.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -29,13 +26,16 @@
   # NTFS support
   boot.supportedFilesystems = [ "ntfs" ];
 
+  # Allow unfree packages (e.g., NVIDIA drivers)
+  nixpkgs.config.allowUnfree = true;
+
   # Linux kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
   
   # Shell
+  programs.zsh.enable = true;
   environment.shells = with pkgs; [ zsh ];
   users.defaultUserShell = pkgs.zsh;
-  programs.zsh.enable = true;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -78,19 +78,13 @@
   # Configure console keymap
   console.keyMap = "fr";
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # Define a user account. Don't forget to set a password with 'passwd'.
   users.users.sacha = {
     isNormalUser = true;
     description = "sacha";
     extraGroups = [ "networkmanager" "wheel" "kvm" ];
     packages = with pkgs; [];
   };
-
-  # Enable automatic login for the user.
-  # services.getty.autologinUser = "sacha";
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -110,6 +104,7 @@
      btop-cuda
      python314Packages.nvidia-ml-py
      throttled
+     stdenv.cc.cc.lib
   ];
   
   programs.hyprland.enable = true;

@@ -101,49 +101,6 @@
             { import = "plugins" },
             -- treesitter handled by xdg.configFile."nvim/parser", put this line at the end of spec to clear ensure_installed
             { "nvim-treesitter/nvim-treesitter", opts = { ensure_installed = {} } },
-            {
-              'Goshujinsama/nvim-strudel',
-              ft = 'strudel',
-              build = function()
-                -- Build server
-                vim.fn.system('cd ' .. vim.fn.stdpath('data') .. '/lazy/nvim-strudel/server && nix-shell -p gcc gnumake python3 nodejs alsa-lib pkg-config --run "npm install" && npm run build')
-
-                -- Create wrapper script
-                local wrapper_path = vim.fn.stdpath('data') .. '/lazy/nvim-strudel/server/strudel-server-wrapper.sh'
-                local wrapper_content = [[#!/usr/bin/env bash
-# Wrapper script for nvim-strudel server on NixOS
-export LD_LIBRARY_PATH="${lib.makeLibraryPath (with pkgs; [ alsa-lib libjack2 ])}:$LD_LIBRARY_PATH"
-SCRIPT_DIR="$(cd "$(dirname "''${BASH_SOURCE[0]}")" && pwd)"
-exec "${pkgs.nodejs}/bin/node" "''${SCRIPT_DIR}/dist/index.js" "$@"
-]]
-
-                local file = io.open(wrapper_path, 'w')
-                if file then
-                  file:write(wrapper_content)
-                    file:close()
-                    vim.fn.system('chmod +x ' .. wrapper_path)
-                    end
-                    end,
-                    keys = {
-                      { '<C-CR>', '<cmd>StrudelEval<cr>', ft = 'strudel', desc = 'Strudel: Eval' },
-                      { '<leader>ss', '<cmd>StrudelStop<cr>', ft = 'strudel', desc = 'Strudel: Stop' },
-                    },
-                    config = function()
-                      require('strudel').setup({
-                          server = {
-                          cmd = {
-                          vim.fn.stdpath('data') .. '/lazy/nvim-strudel/server/strudel-server-wrapper.sh'
-                          },
-                          host = '127.0.0.1',
-                          port = 37812,
-                          auto_start = true,
-                          },
-                          audio = {
-                          output = 'webaudio',  -- or 'osc' for SuperCollider/SuperDirt
-                          },
-                          })
-              end,
-            }
           },
         })
       '';

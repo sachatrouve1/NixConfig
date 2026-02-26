@@ -1,4 +1,3 @@
-
 { config, pkgs, ... }:
 
 {
@@ -9,12 +8,16 @@
     home-modules/vscode/vscode.nix
     home-modules/git.nix
     home-modules/android.nix
+    # home-modules/starship.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "sacha";
   home.homeDirectory = "/home/sacha";
+
+  # Allow unfree packages (e.g., VSCode)
+  nixpkgs.config.allowUnfree = true;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -33,42 +36,6 @@
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
     # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-    htop
-    ncdu
-    bat
-    git
-    wget
-    bat
-    fastfetch
-    zoxide
-    fzf
-    jq
-    cliphist
-    brightnessctl
-    pamixer
-    cava
-    udiskie
-    tree
-    eza pavucontrol
-    caffeine-ng
-    spotify-player
-    docker
-    zip
-    unzip
-    unrar
-    kitty
-    vim
-    proton-vpn-cli
-    protonvpn-gui
-    python314Packages.proton-vpn-daemon
-    python314Packages.proton-keyring-linux
-    gnome-keyring
-    difftastic
-    speedcrunch
-    nmap
-    qwen-code
-    lazygit
-
     gcc
     rustup
     cmake
@@ -94,9 +61,52 @@
     libtool
     ispell
     copilot-language-server
-    aider-chat-full
+    # aider-chat-full
     graphviz
     jdk17
+    libxml2
+
+    htop
+    ncdu
+    bat
+    git
+    wget
+    bat
+    fastfetch
+    zoxide
+    fzf
+    jq
+    cliphist
+    brightnessctl
+    pamixer
+    cava
+    udiskie
+    tree
+    eza pavucontrol
+    caffeine-ng
+    spotify-player
+    docker
+    zip
+    unzip
+    unrar
+    kitty
+    vim
+    protonvpn-gui
+    gnome-keyring
+    difftastic
+    speedcrunch
+    nmap
+    qwen-code
+    lazygit
+    metasploit
+    exploitdb
+    ettercap
+    docker-init
+    dive
+    openfortivpn
+    tldr
+    lsof
+    starship
 
     firefox
     vesktop
@@ -112,9 +122,13 @@
     pinta
     ryubing
     lmms
-    superTuxKart
+    supertuxkart
     gimp
     element-desktop
+    lutris
+    wireshark
+    hydrogen
+    audacity
 
     waybar
     rofi
@@ -136,7 +150,6 @@
     themechanger
     bibata-cursors
 
-    jetbrains-mono
     nerd-fonts.symbols-only
     nerd-fonts._0xproto
     dejavu_fonts
@@ -164,9 +177,6 @@
     aquamarine
     xdg-desktop-portal-hyprland
   ];
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
