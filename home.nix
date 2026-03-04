@@ -4,11 +4,12 @@
   imports = [
     home-modules/librewolf.nix
     home-modules/zsh.nix
+    # home-modules/starship.nix
     home-modules/lazyvim/lazyvim.nix
     home-modules/vscode/vscode.nix
     home-modules/git.nix
     home-modules/android.nix
-    # home-modules/starship.nix
+    home-modules/cisco-auditing-tool.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -65,6 +66,7 @@
     graphviz
     jdk17
     libxml2
+    typstPackages.octique
 
     htop
     ncdu
@@ -98,6 +100,7 @@
     nmap
     qwen-code
     lazygit
+    lazydocker
     metasploit
     exploitdb
     ettercap
@@ -106,7 +109,24 @@
     openfortivpn
     tldr
     lsof
-    starship
+    # starship
+    nosql-booster
+    vt-cli
+    pnpm
+    whatweb
+    zap
+    (pkgs.writeShellScriptBin "pdftotext" ''
+      for file in "''$@"; do
+        if [ -f "''$file" ]; then
+          name="''${file%.*}"
+          echo "Converting ''$file to ''$nom.txt"
+          ${pkgs.haskellPackages.pdftotext}/bin/pdftotext.hs text "''$file" > "''$name.txt"
+        else
+          echo "Erreur : ''$file is not a valid file."
+        fi
+      done
+      echo "Done"
+    '')
 
     firefox
     vesktop
@@ -116,7 +136,8 @@
     kdePackages.okular
     kdePackages.kruler
     jetbrains.idea
-    libreoffice-still
+    jetbrains.rider
+    libreoffice-fresh
     mongodb-compass
     qbittorrent
     pinta
