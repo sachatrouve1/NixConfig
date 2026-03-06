@@ -3,8 +3,7 @@
 {
   imports = [
     home-modules/librewolf.nix
-    home-modules/zsh.nix
-    # home-modules/starship.nix
+    home-modules/fish.nix
     home-modules/lazyvim/lazyvim.nix
     home-modules/vscode/vscode.nix
     home-modules/git.nix
@@ -109,7 +108,6 @@
     openfortivpn
     tldr
     lsof
-    # starship
     nosql-booster
     vt-cli
     pnpm

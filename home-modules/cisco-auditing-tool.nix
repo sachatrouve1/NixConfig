@@ -18,7 +18,43 @@
           perl
           perlPackages.NetAddrIP
           perlPackages.IOStringy
+          perlPackages.NetTelnet
         ];
+
+        postPatch = ''
+          cat > plugins/brute << 'EOF'
+use Net::Telnet();
+
+sub brute {
+    my ($host, $port, $password) = @_;
+    
+    my $telnet = Net::Telnet->new(
+        Timeout => 10,
+        Errmode => 'return',
+        Input_Log => "/dev/null",
+    );
+    
+    return 0 unless $telnet->open($host, $port);
+    
+    my $response = $telnet->waitfor('/password[: ]*$/i');
+    return 0 unless defined $response;
+    
+    $telnet->print($password);
+    
+    ($prematch, $match) = $telnet->waitfor(-match => '/>$/i', -match => '/password[: ]*$/i');
+    
+    if (defined $match && $match =~ />$/i) {
+        $telnet->close;
+        return 1;
+    }
+    
+    $telnet->close;
+    return 0;
+}
+
+1;
+EOF
+        '';
 
         installPhase = ''
           mkdir -p $out/share/cisco-auditing-tool

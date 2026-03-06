@@ -44,6 +44,12 @@
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+      # Zinit plugin manager
+      ZINIT_HOME="''${XDG_DATA_HOME:-''${HOME}/.local/share}/zinit/zinit.git"
+      [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+      [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+      source "''${ZINIT_HOME}/zinit.zsh"
+
       # Configuration of historySubstringSearch
       # zmodload zsh/terminfo
       # bindkey "$terminfo[kcuu1]" history-substring-search-up

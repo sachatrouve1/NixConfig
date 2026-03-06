@@ -13,28 +13,35 @@
 
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
+      set -x VIRTUAL_ENV_DISABLE_PROMPT 1 # Skip venv prompt processing
+
+      # Pure prompt configuration
+      set -g pure_symbol_prompt "❯"
+      set -g pure_symbol_virtualenv "󱔎"
+      set -g pure_symbol_git_unpushed ""
+      set -g pure_symbol_git_unpulled ""
+      set -g pure_symbol_git_dirty ""
+      set -g pure_symbol_git_clean "✓"
+      set -g pure_color_prompt "magenta"
+      set -g pure_color_user "yellow"
+      set -g pure_color_dir "cyan"
+      set -g pure_color_git_branch "green"
+      set -g pure_color_git_unpushed "red"
+      set -g pure_color_git_unpulled "blue"
+      set -g pure_color_git_dirty "yellow"
+      set -g pure_color_path "blue"
+      set -g pure_color_cmd_duration "yellow"
+      set -g pure_show_path true
+      set -g pure_show_user true
+      set -g pure_show_cmd_duration true
+      set -g pure_show_exit_code true
+      set -g pure_prompt_on_new_line true
     '';
 
     plugins = [
       {
-        name = "sponge";
-        src = pkgs.fishPlugins.sponge.src;
-      }
-      {
-        name = "fzf";
-        src = pkgs.fishPlugins.fzf.src;
-      }
-      {
-        name = "done";
-        src = pkgs.fishPlugins.done.src;
-      }
-      {
-        name = "autopair";
-        src = pkgs.fishPlugins.autopair.src;
-      }
-      {
-        name = "colored-man-pages";
-        src = pkgs.fishPlugins.colored-man-pages.src;
+        name = "pure";
+        src = pkgs.fishPlugins.pure.src;
       }
     ];
 
@@ -62,14 +69,15 @@
       searchin = "sudo grep -rnw . -e ";
       setwallpaper = "~/.local/share/bin/set_wallpaper.sh ";
       startweb = "sudo systemctl start httpd && systemctl status httpd && sudo systemctl start mariadb && systemctl status mariadb";
-      rmnot = "sudo ~/rmnot.sh";
+      rmnot = "sudo ~/.local/share/bin/rmnot.sh";
+      topng = "~/.local/share/bin/topng.sh";
     };
   };
 
   programs.zoxide = {
     enable = true;
-    enableZshIntegration = true;
-    enableBashIntegration = true;
+    enableZshIntegration = false;
+    enableBashIntegration = false;
     enableFishIntegration = true;
     options = ["--cmd cd"];
   };
