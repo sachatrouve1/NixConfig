@@ -1,2 +1,1 @@
-# Hyprladus_nix
-My NixOS configuration
+# My NixOS configuration
