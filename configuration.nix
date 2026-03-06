@@ -33,7 +33,6 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   
   # Shell
-  programs.zsh.enable = true;
   programs.fish.enable = true;
   environment.shells = with pkgs; [ fish ];
   users.defaultUserShell = pkgs.fish;
