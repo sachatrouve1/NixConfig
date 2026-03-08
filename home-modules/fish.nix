@@ -6,6 +6,7 @@
 }: {
   home.packages = [
     pkgs.lsd
+    pkgs.fzf
   ];
 
   programs.fish = {
@@ -21,6 +22,9 @@
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
       set -x VIRTUAL_ENV_DISABLE_PROMPT 1 # Skip venv prompt processing
+
+      # fzf key bindings
+      fzf --fish | source
 
       # Pure prompt configuration
       set -g pure_symbol_prompt "❯"
