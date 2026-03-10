@@ -37,11 +37,23 @@
     themechanger
     bibata-cursors
 
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.caskaydia-cove
     nerd-fonts.symbols-only
     nerd-fonts._0xproto
     dejavu_fonts
     noto-fonts
     noto-fonts-color-emoji
+  ] ++ [
+    (pkgs.stdenv.mkDerivation {
+      name = "dotfiles-scripts";
+      src = ../dotfiles/.local/share/bin;
+      installPhase = ''
+        mkdir -p $out/bin
+        cp -r * $out/bin/
+        chmod +x $out/bin/*
+      '';
+    })
   ];
 
   xdg.configFile.fastfetch.source = ../dotfiles/.config/fastfetch;
