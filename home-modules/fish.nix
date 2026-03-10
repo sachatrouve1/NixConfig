@@ -53,6 +53,7 @@
     shellAliases = {
       update = "sudo nixos-rebuild switch --flake ~/.nixconfig/ --impure";
       clean = "sudo nix-collect-garbage -d";
+      searchpkg = "nix search nixpkgs ";
       dockerclean = "sudo docker system prune -a";
       journalclean = "sudo journalctl --vacuum-time=7d";
       vpniut = "sudo openfortivpn u-vpn-plus.unilim.fr --saml-login";

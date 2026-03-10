@@ -89,10 +89,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     hyprland
-     hyprutils
-     hyprland-qtutils
-     hyprland-qt-support
      networkmanager
      networkmanagerapplet
      pipewire
@@ -107,8 +103,6 @@
      stdenv.cc.cc.lib
   ];
   
-  programs.hyprland.enable = true;
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -122,6 +116,8 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   networking.firewall.enable = true;
+
+  programs.hyprland.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
