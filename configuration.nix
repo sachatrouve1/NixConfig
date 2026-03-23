@@ -17,6 +17,9 @@
     modules/services.nix
     modules/nix-ld.nix
     modules/virtual.nix
+    modules/irc.nix
+    modules/tor.nix
+    modules/security.nix
   ];
 
   # Bootloader.
@@ -118,6 +121,7 @@
   networking.firewall.enable = true;
 
   programs.hyprland.enable = true;
+
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

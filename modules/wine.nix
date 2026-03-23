@@ -8,6 +8,6 @@
     winetricks
 
     # Bottles for GUI management of Wine prefixes (optional - remove if not needed)
-    bottles
+    (pkgs.bottles.override{ removeWarningPopup = true; })
   ];
 }

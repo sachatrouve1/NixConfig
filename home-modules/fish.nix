@@ -41,6 +41,7 @@
       set -g fish_transient_prompt true
       set -g pure_show_prefix_root_prompt true
       set -g fish_key_bindings fish_vi_key_bindings
+      set -g pure_enable_container_detection true
     '';
 
     plugins = [
@@ -51,7 +52,8 @@
     ];
 
     shellAliases = {
-      update = "sudo nixos-rebuild switch --flake ~/.nixconfig/ --impure";
+      sysupdate = "sudo nixos-rebuild switch --flake ~/.nixconfig/ --impure";
+      flakeupdate = "nix flake update";
       clean = "sudo nix-collect-garbage -d";
       searchpkg = "nix search nixpkgs ";
       dockerclean = "sudo docker system prune -a";

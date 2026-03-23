@@ -1,18 +1,13 @@
 { config, pkgs, ... }:
 {
   home.packages = with pkgs; [
-    # hyprutils
     hyprland-qtutils
-    # hyprland-qt-support
     hyprpicker
     hyprlock
     hypridle
     hyprsunset
     hyprcursor
     hyprshade
-    # hyprlang
-    # hyprgraphics
-    # aquamarine
     xdg-desktop-portal-hyprland
     gvfs
     qt5.qtwayland

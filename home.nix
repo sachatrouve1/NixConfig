@@ -49,6 +49,7 @@
     jdk17
     libxml2
     typstPackages.octique
+    imagemagick
 
     htop
     ncdu
@@ -74,9 +75,7 @@
     unzip
     unrar
     foot
-    kitty
     vim
-    protonvpn-gui
     gnome-keyring
     difftastic
     speedcrunch
@@ -96,6 +95,9 @@
     vt-cli
     pnpm
     whatweb
+    weechat
+
+    protonvpn-gui
     zap
     (pkgs.writeShellScriptBin "pdftotext" ''
       for file in "''$@"; do
@@ -109,7 +111,6 @@
       done
       echo "Done"
     '')
-
     firefox
     vesktop
     discord
@@ -132,6 +133,9 @@
     wireshark
     hydrogen
     audacity
+    vlc
+    kdePackages.kleopatra
+    tor-browser
   ];
 
   # Let Home Manager install and manage itself.

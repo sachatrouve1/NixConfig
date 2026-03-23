@@ -7,6 +7,7 @@
     udisks2.enable = true;
     throttled.enable = true;
     fwupd.enable = true;
+    openssh.enable = true;
   };
 
   # services.smartcardDev = {
