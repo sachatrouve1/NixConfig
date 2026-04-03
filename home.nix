@@ -42,13 +42,11 @@
     libtool
     ispell
     copilot-language-server
-    # aider-chat-full
     graphviz
     jdk17
     libxml2
     typstPackages.octique
     imagemagick
-
     htop
     ncdu
     bat
@@ -98,8 +96,6 @@
     ddgr
     localtunnel
 
-    proton-vpn
-    zap
     (pkgs.writeShellScriptBin "pdftotext" ''
       for file in "''$@"; do
         if [ -f "''$file" ]; then
@@ -120,23 +116,23 @@
     kdePackages.okular
     kdePackages.kruler
     jetbrains.idea
-    jetbrains.rider
+    # jetbrains.rider
     libreoffice-fresh
     mongodb-compass
     qbittorrent
     pinta
     ryubing
-    lmms
     supertuxkart
     gimp
     element-desktop
     lutris
     wireshark
-    hydrogen
     audacity
     vlc
     kdePackages.kleopatra
     tor-browser
+    proton-vpn
+    zap
   ];
 
   # Let Home Manager install and manage itself.
