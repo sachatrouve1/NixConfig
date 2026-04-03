@@ -30,7 +30,7 @@
   environment.shells = with pkgs; [ fish ];
   users.defaultUserShell = pkgs.fish;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "ThinkpadT480"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
