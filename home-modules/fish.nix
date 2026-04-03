@@ -53,7 +53,7 @@
 
     shellAliases = {
       sysupdate = "sudo nixos-rebuild switch --flake ~/.nixconfig/ --impure";
-      flakeupdate = "nix flake update";
+      flakeupdate = "cd ~/.nixconfig && nix flake update";
       clean = "sudo nix-collect-garbage -d";
       searchpkg = "nix search nixpkgs ";
       dockerclean = "sudo docker system prune -a";
@@ -66,7 +66,7 @@
       l = "eza -lh --icons=auto";
       ll = "eza -lha --icons=auto --sort=name --group-directories-first";
       ld = "eza -lhD --icons=auto";
-      lt = "eza --icons=auto --tree";
+      ltr = "eza --icons=auto --tree";
       ".." = "cd ..";
       "..." = "cd ../..";
       ".3" = "cd ../../..";

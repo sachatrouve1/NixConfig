@@ -39,7 +39,10 @@
     dejavu_fonts
     noto-fonts
     noto-fonts-color-emoji
-  ] ++ [
+    material-symbols
+    google-fonts
+  ]
+  ++ [
     (pkgs.stdenv.mkDerivation {
       name = "dotfiles-scripts";
       src = ../dotfiles/.local/share/bin;

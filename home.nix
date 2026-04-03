@@ -2,13 +2,11 @@
 {
   imports = [
     home-modules/hyprland.nix
-    home-modules/librewolf.nix
     home-modules/fish.nix
+    home-modules/librewolf.nix
     home-modules/lazyvim/lazyvim.nix
     home-modules/vscode/vscode.nix
     home-modules/git.nix
-    home-modules/android.nix
-    home-modules/cisco-auditing-tool.nix
   ];
 
   home.username = "sacha";
@@ -78,7 +76,6 @@
     vim
     gnome-keyring
     difftastic
-    speedcrunch
     nmap
     qwen-code
     lazygit
@@ -96,8 +93,12 @@
     pnpm
     whatweb
     weechat
+    nudoku
+    libqalculate
+    ddgr
+    localtunnel
 
-    protonvpn-gui
+    proton-vpn
     zap
     (pkgs.writeShellScriptBin "pdftotext" ''
       for file in "''$@"; do

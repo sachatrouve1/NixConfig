@@ -3,38 +3,28 @@
 {
   imports = [
     ./hardware-configuration.nix
-    modules/bluetooth.nix
-    modules/greetd.nix
-    modules/nvidia.nix
-    modules/thunar.nix
-    modules/gaming.nix
+    modules/boot.nix
+    modules/security.nix
+    modules/services.nix
     modules/battery.nix
     modules/thinkfan.nix
+    modules/bluetooth.nix
+    modules/nvidia.nix
+    modules/audio.nix
+    modules/nix-ld.nix
+    modules/wine.nix
+    modules/thunar.nix
+    modules/gaming.nix
     modules/docker.nix
     modules/prismlauncher.nix
-    modules/wine.nix
-    modules/audio.nix
-    modules/services.nix
-    modules/nix-ld.nix
     modules/virtual.nix
     modules/irc.nix
     modules/tor.nix
-    modules/security.nix
   ];
-
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  # NTFS support
-  boot.supportedFilesystems = [ "ntfs" ];
 
   # Allow unfree packages (e.g., NVIDIA drivers)
   nixpkgs.config.allowUnfree = true;
 
-  # Linux kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  
   # Shell
   programs.fish.enable = true;
   environment.shells = with pkgs; [ fish ];
