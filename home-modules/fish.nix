@@ -12,6 +12,13 @@
   programs.fish = {
     enable = true;
 
+    plugins = [
+    {
+      name = "pure";
+      src = pkgs.fishPlugins.pure.src;
+    }
+    ];
+
     shellInit = ''
       # Pure prompt colors (must be set before pure loads)
       set -g pure_color_danger "ff6b6b"
@@ -32,6 +39,7 @@
       set -g pure_show_cmd_duration true
       set -g pure_show_exit_code true
       set -g pure_prompt_on_new_line true
+      set -g async_prompt_functions _pure_prompt_git
       set -g pure_show_numbered_git_indicator true
       set -g pure_show_jobs true
       set -g pure_enable_nixdevshell false
@@ -39,15 +47,7 @@
       set -g fish_transient_prompt true
       set -g pure_show_prefix_root_prompt true
       set -g fish_key_bindings fish_vi_key_bindings
-      set -g pure_enable_container_detection true
     '';
-
-    plugins = [
-      {
-        name = "pure";
-        src = pkgs.fishPlugins.pure.src;
-      }
-    ];
 
     shellAliases = {
       sysupdate = "sudo nixos-rebuild switch --flake ~/.nixconfig/";
