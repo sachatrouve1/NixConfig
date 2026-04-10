@@ -16,7 +16,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  home.stateVersion = "25.11"; # Please read the comment before changing.
+  home.stateVersion = "25.11";
 
   home.packages = with pkgs; [
     gcc
@@ -94,7 +94,7 @@
     nudoku
     libqalculate
     ddgr
-    localtunnel
+    ngrok
 
     (pkgs.writeShellScriptBin "pdftotext" ''
       for file in "''$@"; do
@@ -116,7 +116,6 @@
     kdePackages.okular
     kdePackages.kruler
     jetbrains.idea
-    # jetbrains.rider
     libreoffice-fresh
     mongodb-compass
     qbittorrent

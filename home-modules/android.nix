@@ -22,6 +22,8 @@ in
     android-studio
     android.androidsdk
     android-tools   # adb, fastboot
+    jetbrains.rider
+    dotnet-sdk_10
   ];
 
   ############################

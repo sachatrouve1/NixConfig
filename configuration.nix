@@ -23,7 +23,12 @@
     modules/tor.nix
   ];
 
-  zramSwap.enable = true;
+  zramSwap = {
+    enable = true;
+    algorithm = "zstd"; # Best compression ratio
+    memoryPercent = 25; # 25% of ram
+    priority = 100;
+  };
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
