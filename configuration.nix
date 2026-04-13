@@ -23,6 +23,8 @@
     modules/tor.nix
   ];
 
+  zramSwap.enable = true;
+
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Allow unfree packages (e.g., NVIDIA drivers)

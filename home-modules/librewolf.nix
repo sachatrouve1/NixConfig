@@ -20,10 +20,10 @@
         };
 
         # Pywalfox
-        "pywalfox@frewacom.org" = {
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/pywalfox/latest.xpi";
-          installation_mode = "force_installed";
-        };
+        # "pywalfox@frewacom.org" = {
+        #   install_url = "https://addons.mozilla.org/firefox/downloads/latest/pywalfox/latest.xpi";
+        #   installation_mode = "force_installed";
+        # };
 
         # # SponsorBlock
         # "sponsorBlocker@ajay.app" = {
@@ -80,9 +80,9 @@
         # };
 
         # Netflix household no more
-        "{netflix-household-no-more@yourdomain.com}" = {
-          install_url = "https://addons.mozilla.org/firefox/downloads/file/4593495/netflix_household_no_more-2.0.xpi";
-        };
+        # "{netflix-household-no-more@yourdomain.com}" = {
+        #   install_url = "https://addons.mozilla.org/firefox/downloads/file/4593495/netflix_household_no_more-2.0.xpi";
+        # };
       };
       # ---- PREFERENCES ----
       # Check about:config for options.

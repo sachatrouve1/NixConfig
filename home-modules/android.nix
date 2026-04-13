@@ -30,7 +30,6 @@ in
   home.sessionVariables = {
     ANDROID_HOME = "${android.androidsdk}/libexec/android-sdk";
     ANDROID_SDK_ROOT = "${android.androidsdk}/libexec/android-sdk";
-    JAVA_HOME = "${pkgs.jdk17}";
 
     # Hyprland / Wayland: avoid emulator GPU crashes
     QT_QPA_PLATFORM = "wayland;xcb";

@@ -8,6 +8,7 @@
     home-modules/vscode/vscode.nix
     home-modules/git.nix
     home-modules/android.nix
+    home-modules/java.nix
   ];
 
   home.username = "sacha";
@@ -22,7 +23,6 @@
     rustup
     cmake
     rustlings
-    maven
     nodejs
     tree-sitter
     vscode-langservers-extracted
@@ -44,7 +44,6 @@
     ispell
     copilot-language-server
     graphviz
-    jdk17
     libxml2
     typstPackages.octique
     imagemagick
