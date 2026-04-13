@@ -29,8 +29,6 @@
       # Pure prompt configuration
       set -g pure_symbol_prompt "❯"
       set -g pure_enable_container_detection false
-      set -g pure_show_path true
-      set -g pure_show_user true
       set -g pure_show_cmd_duration true
       set -g pure_show_exit_code true
       set -g pure_prompt_on_new_line true
@@ -52,7 +50,7 @@
     ];
 
     shellAliases = {
-      sysupdate = "sudo nixos-rebuild switch --flake ~/.nixconfig/ --impure";
+      sysupdate = "sudo nixos-rebuild switch --flake ~/.nixconfig/";
       flakeupdate = "cd ~/.nixconfig && nix flake update";
       clean = "sudo nix-collect-garbage -d";
       searchpkg = "nix search nixpkgs ";

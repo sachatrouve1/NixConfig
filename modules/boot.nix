@@ -7,23 +7,9 @@
     };
 
     # Disk encryption
-    # initrd.luks.devices.cryptroot.device = "/dev/disk/by-uuid/UUID-OF-SDA2";
+    initrd.luks.devices.cryptroot.device = "/dev/disk/by-uuid/9b9f1d4d-d489-46cf-b827-b8dd34419a6b";
 
     kernelPackages = pkgs.linuxPackages_latest;
     supportedFilesystems = [ "ntfs" ];
   };
-
-  displayManager.autologin = {
-    enable = true;
-    user = "sacha";
-  };
-
-  security.pam.services.greetd.enableGnomeKeyring = true;
-
-  # Autostart Hyprland
-  programs.bash.interactiveShellInit = ''
-    if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
-      exec Hyprland
-    fi
-  '';
 }

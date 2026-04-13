@@ -4,13 +4,14 @@
   imports = [
     ./hardware-configuration.nix
     modules/boot.nix
+    modules/greetd.nix
     modules/security.nix
     modules/services.nix
     modules/battery.nix
     modules/thinkfan.nix
     modules/bluetooth.nix
-    modules/nvidia.nix
     modules/audio.nix
+    modules/nvidia.nix
     modules/nix-ld.nix
     modules/wine.nix
     modules/thunar.nix

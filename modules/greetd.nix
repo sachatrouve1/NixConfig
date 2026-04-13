@@ -1,12 +1,17 @@
 { pkgs, inputs, ... }:
 let
   tuigreet = "${pkgs.tuigreet}/bin/tuigreet";
+  session = "${pkgs.hyprland}/bin/Hyprland";
 in {
   services.greetd = {
     enable = true;
     settings = {
+      initial_session = {
+        command = "${session}";
+        user = "sacha";
+      };
       default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd Hyprland";
+        command = "${tuigreet} --greeting 'Welcome to NixOS!' --time --remember --cmd ${session}";
         user = "greeter";
       };
     };

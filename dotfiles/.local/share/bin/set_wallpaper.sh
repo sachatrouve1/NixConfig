@@ -8,7 +8,7 @@ fi
 wallpaper=$1
 
 cp $wallpaper ~/.cache/wallpaper.png
-swww img $wallpaper
+awww img $wallpaper
 echo "Wallpaper $wallpaper applied."
 wal -i $wallpaper
 echo "Theme applied."

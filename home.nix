@@ -7,6 +7,7 @@
     home-modules/lazyvim/lazyvim.nix
     home-modules/vscode/vscode.nix
     home-modules/git.nix
+    home-modules/android.nix
   ];
 
   home.username = "sacha";

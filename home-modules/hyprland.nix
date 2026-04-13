@@ -20,7 +20,7 @@
     grim
     slurp
     wl-clipboard
-    swww
+    awww
     swaynotificationcenter
     wlogout
     nwg-look
@@ -41,19 +41,16 @@
     noto-fonts-color-emoji
     material-symbols
     google-fonts
-  ]
-  ++ [
-    (pkgs.stdenv.mkDerivation {
-      name = "dotfiles-scripts";
-      src = ../dotfiles/.local/share/bin;
-      installPhase = ''
-        mkdir -p $out/bin
-        cp -r * $out/bin/
-        chmod +x $out/bin/*
-      '';
-    })
   ];
 
+  # Copy scripts
+  home.file.".local/share/bin" = {
+    source = ../dotfiles/.local/share/bin;
+    recursive = true;
+    executable = true;
+  };
+
+  # Copy configs
   xdg.configFile.fastfetch.source = ../dotfiles/.config/fastfetch;
   xdg.configFile.foot.source = ../dotfiles/.config/foot;
   xdg.configFile."gtk-3.0".source = ../dotfiles/.config/gtk-3.0;
