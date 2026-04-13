@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Check if input file is provided
 if [ -z "$1" ]; then
