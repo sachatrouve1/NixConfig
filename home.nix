@@ -85,7 +85,6 @@
     openfortivpn
     tldr
     lsof
-    nosql-booster
     vt-cli
     pnpm
     whatweb
