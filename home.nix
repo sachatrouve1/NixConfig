@@ -7,7 +7,6 @@
     home-modules/lazyvim/lazyvim.nix
     home-modules/vscode/vscode.nix
     home-modules/git.nix
-    home-modules/android.nix
     home-modules/java.nix
   ];
 
@@ -93,8 +92,9 @@
     weechat
     nudoku
     libqalculate
-    ddgr
     ngrok
+    fwupd
+    obs-cli
 
     (pkgs.writeShellScriptBin "pdftotext" ''
       for file in "''$@"; do
@@ -132,6 +132,7 @@
     tor-browser
     proton-vpn
     zap
+    obs-studio
   ];
 
   # Let Home Manager install and manage itself.
