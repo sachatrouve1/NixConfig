@@ -14,7 +14,8 @@
     # accessible via `nvidia-settings`.
     nvidiaSettings = true;
     open = false;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    # MX150 (GP108M) requires legacy 580.xx drivers
+    package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
 
     prime = {
       offload = {

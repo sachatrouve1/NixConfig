@@ -23,6 +23,8 @@
     modules/tor.nix
   ];
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   # Allow unfree packages (e.g., NVIDIA drivers)
   nixpkgs.config.allowUnfree = true;
 
