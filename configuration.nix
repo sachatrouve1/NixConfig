@@ -6,6 +6,7 @@
     modules/boot.nix
     modules/greetd.nix
     modules/security.nix
+    modules/firewall.nix
     modules/services.nix
     modules/battery.nix
     modules/thinkfan.nix
@@ -21,6 +22,7 @@
     modules/virtual.nix
     modules/irc.nix
     modules/tor.nix
+    modules/ollama.nix
   ];
 
   zramSwap = {
@@ -103,7 +105,6 @@
      btop-cuda
      python314Packages.nvidia-ml-py
      throttled
-     stdenv.cc.cc.lib
   ];
   
   # Some programs need SUID wrappers, can be configured further or are
@@ -113,12 +114,6 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  networking.firewall.enable = true;
 
   programs.hyprland.enable = true;
 
@@ -132,12 +127,6 @@
   system.stateVersion = "25.05"; # Did you read the comment?
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.settings.auto-optimise-store = true;
 
-  # Automatically delete old generations to prevent store bloat
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
-  };
+  nix.settings.auto-optimise-store = true;
 }

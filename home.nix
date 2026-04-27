@@ -36,8 +36,6 @@
     live-server
     sqlcmd
     gnumake
-    python313
-    python313Packages.pip
     luarocks
     libtool
     ispell
@@ -74,7 +72,6 @@
     gnome-keyring
     difftastic
     nmap
-    qwen-code
     lazygit
     lazydocker
     metasploit
@@ -93,7 +90,7 @@
     libqalculate
     ngrok
     fwupd
-    obs-cli
+    obs-cmd
 
     (pkgs.writeShellScriptBin "pdftotext" ''
       for file in "''$@"; do
@@ -107,6 +104,13 @@
       done
       echo "Done"
     '')
+
+    (python3.withPackages (ps: with ps; [
+      streamlit
+      anthropic
+      python-docx
+    ]))
+
     firefox
     vesktop
     discord
@@ -129,11 +133,16 @@
     vlc
     kdePackages.kleopatra
     tor-browser
-    proton-vpn
-    zap
     obs-studio
+    thunderbird
+    claude-code
   ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  home.sessionVariables = {
+    ANTHROPIC_BASE_URL = "http://localhost:11434";
+    ANTHROPIC_AUTH_TOKEN = "ollama";
+  };
 }

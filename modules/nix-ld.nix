@@ -10,6 +10,71 @@
       wayland
       icu
       libx11
+      
+      # Chromium - Playwrite dependencies
+      alsa-lib
+      at-spi2-atk
+      at-spi2-core
+      cairo
+      cups
+      dbus
+      expat
+      flac
+      fontconfig
+      freetype
+      fribidi
+      gdk-pixbuf
+      glib
+      gtk3
+      harfbuzz
+      libdrm
+      libgbm
+      libGL
+      libGLU
+      libglvnd
+      libnotify
+      libopus
+      libpng
+      libpulseaudio
+      librsvg
+      libsamplerate
+      libthai
+      libvorbis
+      libvpx
+      libxkbcommon
+      libxml2
+      mesa
+      minizip
+      nss
+      nspr
+      pango
+      pipewire
+      udev
+      wayland
+      libICE
+      libSM
+      libX11
+      libXau
+      libxcb
+      libXcomposite
+      libXcursor
+      libXdamage
+      libdmx
+      libXext
+      libXfixes
+      libXi
+      libXinerama
+      libxkbfile
+      libXmu
+      libXrandr
+      libXrender
+      libXScrnSaver
+      libXt
+      libXtst
+      libXxf86vm
+      libxcb
+      libxshmfence
+      zlib
     ];
   };
 }

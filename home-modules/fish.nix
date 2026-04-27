@@ -64,7 +64,7 @@
       l = "eza -lh --icons=auto";
       ll = "eza -lha --icons=auto --sort=name --group-directories-first";
       ld = "eza -lhD --icons=auto";
-      ltr = "eza --icons=auto --tree";
+      lt = "eza --icons=auto --tree";
       ".." = "cd ..";
       "..." = "cd ../..";
       ".3" = "cd ../../..";
