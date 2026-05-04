@@ -42,7 +42,7 @@
       set -g async_prompt_functions _pure_prompt_git
       set -g pure_show_numbered_git_indicator true
       set -g pure_show_jobs true
-      set -g pure_enable_nixdevshell false
+      set -g pure_enable_nixdevshell true
       set -g pure_show_subsecond_command_duration false
       set -g fish_transient_prompt true
       set -g pure_show_prefix_root_prompt true

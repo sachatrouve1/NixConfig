@@ -109,9 +109,10 @@
       streamlit
       anthropic
       python-docx
+      python-dotenv
+      keyring
     ]))
 
-    firefox
     vesktop
     discord
     spotify
@@ -119,7 +120,7 @@
     kdePackages.okular
     kdePackages.kruler
     jetbrains.idea
-    libreoffice-fresh
+    libreoffice-still
     mongodb-compass
     qbittorrent
     pinta
@@ -127,7 +128,7 @@
     supertuxkart
     gimp
     element-desktop
-    lutris
+    # lutris
     wireshark
     audacity
     vlc

@@ -19,7 +19,7 @@
         inherit system;
         modules = [
           ./configuration.nix
-          # ./modules/virtual_profiles.nix
+
           home-manager.nixosModules.home-manager {
             # home-manager.useGlobalPkgs = true;
             # home-manager.useUserPackages = true;
@@ -28,14 +28,6 @@
         ];
       };
     };
-    # homeConfigurations = {
-    #   sacha = home-manager.lib.homeManagerConfiguration {
-    #     inherit pkgs;
-    #     modules = [ 
-    #         ./home.nix 
-    #     ];
-    #   }; 
-    # };
   };
 
 }

@@ -5,6 +5,7 @@
 }: {
   programs.firefox = {
     enable = true;
+    configPath = ".mozilla/firefox";
     package = pkgs.librewolf; # Utiliser librewolf au lieu de firefox
     policies = {
       # ---- EXTENSIONS ----

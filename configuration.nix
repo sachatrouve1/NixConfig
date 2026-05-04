@@ -23,6 +23,7 @@
     modules/irc.nix
     modules/tor.nix
     modules/ollama.nix
+    # modules/overlays.nix
   ];
 
   zramSwap = {
