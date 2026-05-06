@@ -1,13 +1,13 @@
 { userName, pkgs, ... }:
 {
   imports = [
-    ../../base.nix
-    ../../features/gaming.nix
-    ../../features/hyprland.nix
-    ../../features/librewolf.nix
-    ../../features/lazyvim/lazyvim.nix
-    ../../features/vscode/vscode.nix
-    ../../features/udisk.nix
+    ../../../home-modules/base.nix
+    ../../../home-modules/features/gaming.nix
+    ../../../home-modules/features/hyprland.nix
+    ../../../home-modules/features/librewolf.nix
+    ../../../home-modules/features/lazyvim/lazyvim.nix
+    ../../../home-modules/features/vscode/vscode.nix
+    ../../../home-modules/features/udisk.nix
   ];
 
   home.stateVersion = "25.11";

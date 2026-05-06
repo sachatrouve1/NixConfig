@@ -1,6 +1,6 @@
 { ... }:
 {
   imports = [
-    ../../base.nix
+    ../../../home-modules/base.nix
   ];
 }
