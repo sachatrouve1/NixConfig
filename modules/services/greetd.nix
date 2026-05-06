@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, userName, ... }:
 let
   tuigreet = "${pkgs.tuigreet}/bin/tuigreet";
   session = "${pkgs.hyprland}/bin/Hyprland";
@@ -8,7 +8,7 @@ in {
     settings = {
       initial_session = {
         command = "${session}";
-        user = "sacha";
+        user = userName;
       };
       default_session = {
         command = "${tuigreet} --greeting 'Welcome to NixOS!' --time --remember --cmd ${session}";

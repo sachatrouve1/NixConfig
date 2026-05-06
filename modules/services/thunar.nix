@@ -1,8 +1,5 @@
+{ config, pkgs, ... }:
 {
-  config,
-  pkgs,
-  ...
-}: {
   programs.thunar = {
     enable = true;
 
@@ -10,5 +7,10 @@
       thunar-archive-plugin
       thunar-media-tags-plugin
     ];
+  };
+
+  services = {
+    tumbler.enable = true;
+    udisks2.enable = true;
   };
 }

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userName, ... }:
 {
   # Nvidia graphics
   hardware.graphics = {
@@ -30,5 +30,5 @@
   # Luminosity for external display:
   hardware.i2c.enable = true;
 
-  users.users.sacha.extraGroups = [ "i2c" ];
+  users.users.${userName}.extraGroups = [ "i2c" ];
 }

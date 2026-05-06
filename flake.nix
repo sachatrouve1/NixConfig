@@ -1,6 +1,5 @@
 {
-
-  description = "My flake";
+  description = "Multi-host config";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -8,26 +7,33 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, home-manager, ... } @inputs:
     let
-      lib = nixpkgs.lib;
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in {
-    nixosConfigurations = {
-      ThinkpadT480 = lib.nixosSystem {
+      lib = nixpkgs.lib;
+
+      # Generate configs
+      mkHost = hostName: userName: lib.nixosSystem {
         inherit system;
+        specialArgs = { inherit inputs hostName userName; };
+
         modules = [
-          ./configuration.nix
+          ./hosts/${hostName}
 
           home-manager.nixosModules.home-manager {
-            # home-manager.useGlobalPkgs = true;
-            # home-manager.useUserPackages = true;
-            home-manager.users.sacha = import ./home.nix;
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs hostName userName; };
+            home-manager.users.${userName} = import ./users/${userName}/hosts/${hostName}.nix;
           }
         ];
       };
+    in {
+      nixosConfigurations = {
+        #                      system           user
+        ThinkpadT480  = mkHost "ThinkpadT480" "sacha";
+        Fujitsu       = mkHost "Fujitsu"      "sacha";
+        Server0       = mkHost "Server0"      "nixserver";
+      };
     };
-  };
-
 }

@@ -1,8 +1,8 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userName, ... }:
 {
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
-  users.users.sacha.extraGroups = [ "libvirtd" ];
+  users.users.${userName}.extraGroups = [ "libvirtd" ];
 
   # Fix libvirt virt-secret-init-encryption service that uses /usr/bin/sh
   # which doesn't exist on NixOS (should use /run/current-system/sw/bin/sh)

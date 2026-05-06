@@ -45,20 +45,20 @@
 
   # Copy scripts
   home.file.".local/share/bin" = {
-    source = ../dotfiles/.local/share/bin;
+    source = ../../dotfiles/.local/share/bin;
     recursive = true;
     executable = true;
   };
 
   # Copy configs
-  xdg.configFile.fastfetch.source = ../dotfiles/.config/fastfetch;
-  xdg.configFile.foot.source = ../dotfiles/.config/foot;
-  xdg.configFile."gtk-3.0".source = ../dotfiles/.config/gtk-3.0;
-  xdg.configFile."gtk-4.0".source = ../dotfiles/.config/gtk-4.0;
-  xdg.configFile.hypr.source = ../dotfiles/.config/hypr;
-  xdg.configFile.rofi.source = ../dotfiles/.config/rofi;
-  xdg.configFile."wal/hooks".source = ../dotfiles/.config/wal/hooks;
-  xdg.configFile."wal/templates".source = ../dotfiles/.config/wal/templates;
-  xdg.configFile.waybar.source = ../dotfiles/.config/waybar;
-  xdg.configFile.wlogout.source = ../dotfiles/.config/wlogout;
+  xdg.configFile.fastfetch.source = ../../dotfiles/.config/fastfetch;
+  xdg.configFile.foot.source = ../../dotfiles/.config/foot;
+  xdg.configFile."gtk-3.0".source = ../../dotfiles/.config/gtk-3.0;
+  xdg.configFile."gtk-4.0".source = ../../dotfiles/.config/gtk-4.0;
+  xdg.configFile.hypr.source = ../../dotfiles/.config/hypr;
+  xdg.configFile.rofi.source = ../../dotfiles/.config/rofi;
+  xdg.configFile."wal/hooks".source = ../../dotfiles/.config/wal/hooks;
+  xdg.configFile."wal/templates".source = ../../dotfiles/.config/wal/templates;
+  xdg.configFile.waybar.source = ../../dotfiles/.config/waybar;
+  xdg.configFile.wlogout.source = ../../dotfiles/.config/wlogout;
 }

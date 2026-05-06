@@ -1,24 +1,23 @@
-{ config, pkgs, ... }:
+{ userName, pkgs, ... }:
 {
   imports = [
-    home-modules/hyprland.nix
-    home-modules/fish.nix
-    home-modules/librewolf.nix
-    home-modules/lazyvim/lazyvim.nix
-    home-modules/vscode/vscode.nix
-    home-modules/git.nix
-    home-modules/java.nix
+    ../../base.nix
+    ../../features/gaming.nix
+    ../../features/hyprland.nix
+    ../../features/librewolf.nix
+    ../../features/lazyvim/lazyvim.nix
+    ../../features/vscode/vscode.nix
+    ../../features/udisk.nix
   ];
-
-  home.username = "sacha";
-  home.homeDirectory = "/home/sacha";
-
-  nixpkgs.config.allowUnfree = true;
 
   home.stateVersion = "25.11";
 
+  home.username = userName;
+  home.homeDirectory = "/home/${userName}";
+
+  services.playerctld.enable = true;
+
   home.packages = with pkgs; [
-    gcc
     rustup
     cmake
     rustlings
@@ -44,26 +43,16 @@
     libxml2
     typstPackages.octique
     imagemagick
-    htop
-    ncdu
-    bat
-    git
-    wget
-    bat
-    fastfetch
-    zoxide
     fzf
     jq
     cliphist
-    brightnessctl
     pamixer
     cava
-    udiskie
     tree
-    eza pavucontrol
+    eza
+    pavucontrol
     caffeine-ng
     spotify-player
-    docker
     zip
     unzip
     unrar
@@ -89,8 +78,7 @@
     nudoku
     libqalculate
     ngrok
-    fwupd
-    obs-cmd
+    claude-code
 
     (pkgs.writeShellScriptBin "pdftotext" ''
       for file in "''$@"; do
@@ -109,7 +97,6 @@
       streamlit
       anthropic
       python-docx
-      python-dotenv
       keyring
     ]))
 
@@ -124,11 +111,8 @@
     mongodb-compass
     qbittorrent
     pinta
-    ryubing
-    supertuxkart
     gimp
     element-desktop
-    # lutris
     wireshark
     audacity
     vlc
@@ -136,11 +120,7 @@
     tor-browser
     obs-studio
     thunderbird
-    claude-code
   ];
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
 
   home.sessionVariables = {
     ANTHROPIC_BASE_URL = "http://localhost:11434";
