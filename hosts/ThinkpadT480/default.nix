@@ -2,6 +2,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ../../modules/hardware/nvidia_mx150.nix
     ../../modules/profiles/laptop.nix
     ../../modules/profiles/gaming.nix
   ];
