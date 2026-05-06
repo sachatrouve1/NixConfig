@@ -1,4 +1,4 @@
-{ config, pkgs, userName, ... }:
+{ config, pkgs, userName, hostName, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -8,7 +8,7 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "ThinkpadT480"; # Define your hostname.
+  networking.hostName = hostName; # Define your hostname.
 
   # Define a user account. Don't forget to set a password with 'passwd'.
   users.users.${userName} = {

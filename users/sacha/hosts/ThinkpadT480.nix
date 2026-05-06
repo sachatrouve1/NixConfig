@@ -1,4 +1,4 @@
-{ userName, pkgs, ... }:
+{ config, userName, pkgs, ... }:
 {
   imports = [
     ../../../home-modules/base.nix
