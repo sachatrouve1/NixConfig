@@ -8,6 +8,7 @@
     ../../../home-modules/features/lazyvim/lazyvim.nix
     ../../../home-modules/features/vscode/vscode.nix
     ../../../home-modules/features/udisk.nix
+    ../../../home-modules/features/direnv.nix
   ];
 
   home.stateVersion = "25.11";
@@ -18,10 +19,7 @@
   services.playerctld.enable = true;
 
   home.packages = with pkgs; [
-    rustup
     cmake
-    rustlings
-    nodejs
     tree-sitter
     vscode-langservers-extracted
     twig-language-server
@@ -92,13 +90,6 @@
       done
       echo "Done"
     '')
-
-    (python3.withPackages (ps: with ps; [
-      streamlit
-      anthropic
-      python-docx
-      keyring
-    ]))
 
     vesktop
     discord
