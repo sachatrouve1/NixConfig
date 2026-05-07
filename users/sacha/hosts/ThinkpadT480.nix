@@ -7,7 +7,6 @@
     ../../../home-modules/features/librewolf.nix
     ../../../home-modules/features/lazyvim/lazyvim.nix
     ../../../home-modules/features/vscode/vscode.nix
-    ../../../home-modules/features/udisk.nix
     ../../../home-modules/features/direnv.nix
   ];
 
@@ -44,6 +43,8 @@
     fzf
     jq
     cliphist
+    networkmanagerapplet
+    udiskie
     pamixer
     cava
     tree
