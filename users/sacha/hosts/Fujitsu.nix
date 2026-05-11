@@ -19,6 +19,7 @@
 
   home.packages = with pkgs; [
     cmake
+    python3
     tree-sitter
     vscode-langservers-extracted
     twig-language-server
