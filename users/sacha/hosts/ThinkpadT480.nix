@@ -19,7 +19,7 @@
 
   home.packages = with pkgs; [
     cmake
-    python3
+    python314
     tree-sitter
     vscode-langservers-extracted
     twig-language-server
@@ -78,7 +78,7 @@
     nudoku
     libqalculate
     ngrok
-    claude-code
+    gemini-cli
 
     (pkgs.writeShellScriptBin "pdftotext" ''
       for file in "''$@"; do
@@ -114,9 +114,4 @@
     obs-studio
     thunderbird
   ];
-
-  home.sessionVariables = {
-    ANTHROPIC_BASE_URL = "http://localhost:11434";
-    ANTHROPIC_AUTH_TOKEN = "ollama";
-  };
 }

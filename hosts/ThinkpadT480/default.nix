@@ -15,7 +15,7 @@
   users.users.${userName} = {
     isNormalUser = true;
     description = userName;
-    extraGroups = [ "networkmanager" "wheel" "kvm" ];
+    extraGroups = [ "networkmanager" "wheel" "kvm" "dialout" "uucp" ];
     packages = with pkgs; [];
   };
 
