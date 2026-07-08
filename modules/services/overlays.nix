@@ -10,6 +10,9 @@
          installCheckPhase = "true";
          doInstallCheck = false;
          });
+     throttled = prev.throttled.overrideAttrs (oldAttrs: {
+         pythonPath = oldAttrs.pythonPath ++ [ final.python3Packages.dbus-next ];
+         });
      })
 ];
 # This is the "Magic Fix" for Flake/Home-Manager users

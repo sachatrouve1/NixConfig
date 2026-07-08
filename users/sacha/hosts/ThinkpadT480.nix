@@ -78,7 +78,8 @@
     nudoku
     libqalculate
     ngrok
-    gemini-cli
+    antigravity-cli
+    ffmpeg
 
     (pkgs.writeShellScriptBin "pdftotext" ''
       for file in "''$@"; do
@@ -113,5 +114,6 @@
     tor-browser
     obs-studio
     thunderbird
+    proton-vpn
   ];
 }

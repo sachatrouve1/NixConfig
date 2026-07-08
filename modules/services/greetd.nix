@@ -26,4 +26,6 @@ in {
     TTYVHangup = true;
     TTYVTDisallocate = true;
   };
+
+  security.pam.services.greetd.enableGnomeKeyring = true;
 }
