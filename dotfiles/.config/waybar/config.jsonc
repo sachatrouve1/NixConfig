@@ -7,7 +7,8 @@
         "group/traygroup",
         "custom/left_div#1",
         "hyprland/workspaces",
-        "custom/right_div#1"
+        "custom/right_div#1",
+        "custom/moonphase"
         // "network#bandwidth"
         // "tray"
         // "hyprland/window"
@@ -122,6 +123,12 @@
         // "on-scroll-up":
         // "on-scroll-down":
         "cursor": true
+    },
+    "custom/moonphase": {
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/moonphase.sh",
+        "interval": 86400,
+        "min-length": 4
     },
     "custom/temperature": {
         "exec": "~/.config/waybar/scripts/cpu-temp.sh",
