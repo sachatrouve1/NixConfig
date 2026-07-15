@@ -1,5 +1,9 @@
 { config, pkgs, ...}:
 {
+  imports = [
+    ../services/overlays.nix
+  ];
+
   services.dbus.enable = true;
   services.gnome.gnome-keyring.enable = true;
   services.openssh.enable = true;

@@ -5,7 +5,6 @@
     ../../modules/hardware/nvidia_mx150.nix
     ../../modules/profiles/laptop.nix
     ../../modules/profiles/gaming.nix
-    ../../modules/services/overlays.nix
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;

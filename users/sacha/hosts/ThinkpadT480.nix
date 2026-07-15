@@ -102,7 +102,7 @@
     kdePackages.kruler
     jetbrains.idea
     libreoffice-still
-    mongodb-compass
+    # mongodb-compass
     qbittorrent
     pinta
     gimp
@@ -113,7 +113,6 @@
     kdePackages.kleopatra
     tor-browser
     obs-studio
-    thunderbird
     proton-vpn
   ];
 }

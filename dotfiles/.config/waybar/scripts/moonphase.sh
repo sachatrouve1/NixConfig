@@ -7,12 +7,12 @@ moonphase() {
   local now=$(date -u +"%s")
   local newmoon=592500
   local phase=$((($now - $newmoon) % $lp))
-  local phase_number=$((((phase / 86400) + 1)*100000))
-  local phase_day=$(($phase_number/100000));
+  local phase_number=$(((phase * 100000) / 86400))
+  local phase_day=$((($phase / 86400) + 1));
 
   # parse arguments
   local args=$@
-  local icon_flag=true
+  local icon_flag=false
   local emoji_flag=false
   if [ $# -ge 1 ]; then
 

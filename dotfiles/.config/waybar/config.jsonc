@@ -126,7 +126,7 @@
     },
     "custom/moonphase": {
         "format": "{}",
-        "exec": "~/.config/waybar/scripts/moonphase.sh",
+        "exec": "~/.config/waybar/scripts/moonphase.sh -i -e",
         "interval": 86400,
         "min-length": 4
     },
