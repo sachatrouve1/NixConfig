@@ -18,6 +18,8 @@
   services.playerctld.enable = true;
 
   home.packages = with pkgs; [
+    fd
+    ripgrep
     cmake
     python314
     tree-sitter
@@ -80,6 +82,8 @@
     ngrok
     antigravity-cli
     ffmpeg
+    eww
+    yewtube
 
     (pkgs.writeShellScriptBin "pdftotext" ''
       for file in "''$@"; do

@@ -50,13 +50,12 @@
     '';
 
     shellAliases = {
-      sysupdate = "sudo nixos-rebuild switch --flake ~/.nixconfig/";
+      sysupdate = "sudo nixos-rebuild switch --flake ~/nixconfig/";
       flakeupdate = "cd ~/.nixconfig && nix flake update";
       clean = "nix-env --delete-generations old -p ~/.local/state/nix/profiles/profile && sudo nix-collect-garbage -d";
       searchpkg = "nix search nixpkgs ";
       dockerclean = "sudo docker system prune -a";
       journalclean = "sudo journalctl --vacuum-time=7d";
-      vpniut = "sudo openfortivpn u-vpn-plus.unilim.fr --saml-login";
       bdd = "nvim +':DBUI' ";
       avante = "nvim -c 'lua vim.defer_fn(function()require(\"avante.api\").zen_mode()end, 100)'";
       ls = "eza -1 --icons=auto";
