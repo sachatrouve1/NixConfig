@@ -14,11 +14,11 @@
     ../core/hardening.nix
     ../services/greetd.nix
     ../services/docker.nix
-    ../services/ollama.nix
     ../services/thunar.nix
     ../services/nix-ld.nix
     ../services/virtual.nix
     ../services/wine.nix
+    ../services/bentopdf.nix
   ];
 
   programs.hyprland.enable = true;

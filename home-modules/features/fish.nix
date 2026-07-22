@@ -51,8 +51,9 @@
 
     shellAliases = {
       sysupdate = "sudo nixos-rebuild switch --flake ~/nixconfig/";
-      flakeupdate = "cd ~/.nixconfig && nix flake update";
+      flakeupdate = "cd ~/nixconfig && nix flake update";
       clean = "nix-env --delete-generations old -p ~/.local/state/nix/profiles/profile && sudo nix-collect-garbage -d";
+      pkg = "nix-shell --run fish -p";
       searchpkg = "nix search nixpkgs ";
       dockerclean = "sudo docker system prune -a";
       journalclean = "sudo journalctl --vacuum-time=7d";
