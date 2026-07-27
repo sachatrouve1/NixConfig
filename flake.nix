@@ -5,9 +5,10 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... } @inputs:
+  outputs = { self, nixpkgs, home-manager, chaotic, ... } @inputs:
     let
       system = "x86_64-linux";
       lib = nixpkgs.lib;
@@ -26,6 +27,8 @@
             home-manager.extraSpecialArgs = { inherit inputs hostName userName; };
             home-manager.users.${userName} = import ./users/${userName}/hosts/${hostName}.nix;
           }
+
+          chaotic.nixosModules.default
         ];
       };
     in {

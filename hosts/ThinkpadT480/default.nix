@@ -7,7 +7,8 @@
     ../../modules/profiles/gaming.nix
   ];
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_cachyos;
 
   networking.hostName = hostName; # Define your hostname.
 
