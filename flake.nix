@@ -5,10 +5,10 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
   };
 
-  outputs = { self, nixpkgs, home-manager, chaotic, ... } @inputs:
+  outputs = { self, nixpkgs, home-manager, nix-cachyos-kernel, ... } @inputs:
     let
       system = "x86_64-linux";
       lib = nixpkgs.lib;
@@ -28,7 +28,14 @@
             home-manager.users.${userName} = import ./users/${userName}/hosts/${hostName}.nix;
           }
 
-          chaotic.nixosModules.default
+          (
+            { pkgs, ... }:
+            {
+              nixpkgs.overlays = [
+                nix-cachyos-kernel.overlays.pinned
+              ];
+            }
+          )
         ];
       };
     in {
