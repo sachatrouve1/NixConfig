@@ -27,7 +27,6 @@
     nwg-displays
     papirus-icon-theme
     adwaita-icon-theme
-    gtk-engine-murrine
     material-black-colors
     themechanger
     bibata-cursors
@@ -55,7 +54,7 @@
   xdg.configFile.foot.source = ../../dotfiles/config/foot;
   xdg.configFile."gtk-3.0".source = ../../dotfiles/config/gtk-3.0;
   xdg.configFile."gtk-4.0".source = ../../dotfiles/config/gtk-4.0;
-  xdg.configFile.hypr.source = ../../dotfiles/config/hypr;
+  xdg.configFile.hypr.source = ../../dotfiles/config/hypr_lua;
   xdg.configFile.rofi.source = ../../dotfiles/config/rofi;
   xdg.configFile."wal/hooks".source = ../../dotfiles/config/wal/hooks;
   xdg.configFile."wal/templates".source = ../../dotfiles/config/wal/templates;

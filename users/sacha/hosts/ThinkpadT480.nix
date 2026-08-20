@@ -82,8 +82,9 @@
     ngrok
     antigravity-cli
     ffmpeg
-    eww
+    p7zip
     yewtube
+    cabextract
 
     (pkgs.writeShellScriptBin "pdftotext" ''
       for file in "''$@"; do
@@ -118,5 +119,7 @@
     tor-browser
     obs-studio
     proton-vpn
+    lutris
+    protontricks
   ];
 }

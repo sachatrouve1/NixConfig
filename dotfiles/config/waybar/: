@@ -6,7 +6,7 @@
 * {
 	font-family: "0xProto Nerd Font";
 	font-weight: bold;
-	font-size: 12px;
+	font-size: 18px;
 	color: @main-fg;
 	min-height: 0;
 	min-width: 0;
@@ -52,7 +52,7 @@ label, widget, button {
 .modules-center widget,
 .modules-right widget,
 #workspaces button {
-	margin-top: 0;
+	margin-top: -1px;
 	margin-bottom: -1px;
 }
 
@@ -78,14 +78,14 @@ label, widget, button {
 .charging { color: @charging; }
 .muted { color: @hover-fg; }
 
-/* dividers - 14px to keep bar height slim */
+/* dividers */
 
 #custom-left_div,
 #custom-left_inv,
 #custom-right_div,
 #custom-right_inv {
 	font-size: 14px;
-	margin-top: 0;
+	margin-top: -1px;
 	margin-bottom: -1px;
 }
 

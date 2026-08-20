@@ -41,8 +41,8 @@
 }
 
 #custom-distro {
-	padding: 1px 7px 1px 0px;
-	font-size: 15px;
+	padding: 0 7px 0 0px;
+	font-size: 14px;
 	background-color: @distro-bg;
 	color: @distro-fg;
 }
@@ -85,12 +85,12 @@
 	
 #idle_inhibitor {
 	background-color: @tray;
-    padding: 1px 6px 0 11px;
+    padding: 0 6px 0 11px;
 }
 #custom-hyprsunset {
 	background-color: @tray;
     /* font-size: 13px; */
-    padding: 0 11px 1px 6px;
+    padding: 0 11px 0 6px;
 }
 
 #custom-system_update {

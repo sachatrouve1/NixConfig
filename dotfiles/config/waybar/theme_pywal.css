@@ -29,6 +29,8 @@
 
 @define-color module-fg       @foreground;
 @define-color workspaces      shade(@color3, 0.5);
+@define-color moonphase       shade(@color3, 0.7);
+@define-color network         shade(@color3, 0.9);
 
 @define-color temperature     shade(@color3, 0.5);
 @define-color memory          shade(@color3, 0.7);

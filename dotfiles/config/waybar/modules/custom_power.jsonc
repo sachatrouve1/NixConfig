@@ -1,8 +1,0 @@
-{
-    "custom/Apower": {
-        "format": " ",
-        "tooltip": false,
-        // "tooltip-format": "Power Menu",
-        "on-click": "~/.config/waybar/scripts/power-menu.sh"
-    }
-}

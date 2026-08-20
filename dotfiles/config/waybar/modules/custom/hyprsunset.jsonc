@@ -1,12 +1,13 @@
-{  
+{
     "custom/hyprsunset": {
-        "format": {},
-        "exec": "~/.config/waybar/scripts/toggle_hyprsunset.sh --get",
+        "format": "{}",
+        "exec": "bash -c 'sun_icon=$(~/.config/waybar/scripts/toggle_hyprsunset.sh --get); shade=$(hyprshade current 2>/dev/null | tr -d \"[:space:]\"); if [[ \"$shade\" == \"extradark\" ]]; then if [[ \"$sun_icon\" == \"󰌶\" ]]; then echo 󱩍; else echo 󱩌; fi; else echo \"$sun_icon\"; fi'",
         "on-click": "~/.config/waybar/scripts/toggle_hyprsunset.sh --toggle",
+        "on-click-right": "~/.config/waybar/scripts/toggle_hyprshade.sh",
         "tooltip": true,
-        "min-length": 3,
-        "max-length": 3,
-        "interval": 1,
+        "min-length": 2,
+        "max-length": 2,
+        "interval": 2,
         "tooltip-format-activated": "Night mode",
         "tooltip-format-deactivated": "Light mode"
     }

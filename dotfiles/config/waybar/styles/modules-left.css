@@ -43,27 +43,16 @@
 	/* font-size: 13px; */
 }
 #workspaces .active label {
-	font-size: 15px;
 	color: @accent;
 	padding: 0px 5px 0 0;
 }
 
-/* window title & count */
+#custom-moonphase {
+	font-size: 14px;
+	padding: 0 6px;
+}
 
-/*#window {
-	margin-left: 12px;
+#network {
+	padding: 0 6px;
+	margin-top: 1px;
 }
-#window label {
-	font-weight: normal;
-}
-#windowcount {
-	margin-right: 12px;
-}*/
-/*#windowcount label {
-	color: @hover-fg;
-}*/
-/*#network {
-	background-color: @crust;
-	font-size: 20px;
-	padding-bottom: 5px;
-}*/
