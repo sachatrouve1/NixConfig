@@ -41,7 +41,7 @@
 }
 
 #custom-distro {
-	padding: 0 7px 0 0px;
+	padding: 0 6px 0 0px;
 	font-size: 14px;
 	background-color: @distro-bg;
 	color: @distro-fg;

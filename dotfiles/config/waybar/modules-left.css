@@ -1,8 +1,28 @@
 @import "../theme_pywal.css";
 
+/* theme switcher */
+
+/* #custom-user { */
+/* 	padding-right: 12px; */
+/* 	font-weight: normal; */
+/* } */
+
+/* workspaces */
+
+/* #traygroup { */
+/*     color: @accent; */
+/* } */
+/**/
+/* #traylauncher { */
+/*     color: @accent; */
+/* } */
+/**/
+/* #tray { */
+/*     color: @accent; */
+/* } */
+
 #custom-traylauncher {
     color: @accent;
-    font-size: 13px;
 }
 
 #tray {
@@ -18,13 +38,10 @@
 #workspaces {
 	background-color: @workspaces;
 }
-#workspaces button label {
-  margin-top: -2px;
-  margin-bottom: -2px;
-}
 #workspaces .persistent label {
   font-size: 13px;
   padding: 0 1px;
+  margin-bottom: -2px;
 }
 #workspaces .active label {
   font-size: 14px;

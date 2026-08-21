@@ -85,6 +85,7 @@
     p7zip
     yewtube
     cabextract
+    d2
 
     (pkgs.writeShellScriptBin "pdftotext" ''
       for file in "''$@"; do
