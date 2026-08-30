@@ -19,6 +19,7 @@
     ../services/virtual.nix
     ../services/wine.nix
     ../services/bentopdf.nix
+    ../services/ollama.nix
   ];
 
   programs.hyprland.enable = true;

@@ -77,13 +77,12 @@
     pnpm
     whatweb
     weechat
-    nudoku
     libqalculate
     ngrok
     antigravity-cli
     ffmpeg
     p7zip
-    yewtube
+    yt-dlp
     cabextract
     d2
 
@@ -107,7 +106,7 @@
     kdePackages.okular
     kdePackages.kruler
     jetbrains.idea
-    libreoffice-still
+    libreoffice
     # mongodb-compass
     qbittorrent
     pinta

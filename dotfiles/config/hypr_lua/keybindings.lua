@@ -9,14 +9,8 @@ local file = "thunar"
 local browser = "librewolf"
 
 -- Window / Session actions
-hl.bind("SUPER + Q", function()
-	local win = hl.get_active_window()
-	if win and win.class and win.class:lower() == "steam" then
-		hl.exec_cmd("xdotool getactivewindow windowunmap")
-	else
-		hl.dispatch(hl.dsp.window.close())
-	end
-end, { repeating = true })
+hl.bind("SUPER + Q", hl.dsp.exec_cmd(scrPath .. "/dontkillsteam.sh"), { repeating = true })
+
 
 hl.bind("ALT + F4", hl.dsp.window.close())
 hl.bind("SUPER + ALT + Delete", hl.dsp.exit())

@@ -12,6 +12,8 @@
       stylua
       # Telescope
       ripgrep
+      # D2
+      d2
     ];
 
     plugins = with pkgs.vimPlugins; [
@@ -62,6 +64,7 @@
           vim-illuminate
           vim-startuptime
           which-key-nvim
+          d2-vim
           { name = "LuaSnip"; path = luasnip; }
           { name = "catppuccin"; path = catppuccin-nvim; }
           { name = "mini.ai"; path = mini-nvim; }

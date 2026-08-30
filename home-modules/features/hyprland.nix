@@ -30,6 +30,8 @@
     material-black-colors
     themechanger
     bibata-cursors
+    xdotool
+    jq
 
     nerd-fonts.jetbrains-mono
     nerd-fonts.caskaydia-cove
