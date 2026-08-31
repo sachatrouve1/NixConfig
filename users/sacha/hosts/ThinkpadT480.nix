@@ -85,6 +85,7 @@
     yt-dlp
     cabextract
     d2
+    killall
 
     (pkgs.writeShellScriptBin "pdftotext" ''
       for file in "''$@"; do
@@ -99,6 +100,7 @@
       echo "Done"
     '')
 
+    nemo
     vesktop
     discord
     spotify

@@ -51,6 +51,12 @@
     executable = true;
   };
 
+  # Copy nemo actions
+  home.file.".local/share/nemo/actions" = {
+    source = ../../dotfiles/local/share/nemo/actions;
+    recursive = true;
+  };
+
   # Copy configs
   xdg.configFile.fastfetch.source = ../../dotfiles/config/fastfetch;
   xdg.configFile.foot.source = ../../dotfiles/config/foot;

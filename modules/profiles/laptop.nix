@@ -14,7 +14,6 @@
     ../core/hardening.nix
     ../services/greetd.nix
     ../services/docker.nix
-    ../services/thunar.nix
     ../services/nix-ld.nix
     ../services/virtual.nix
     ../services/wine.nix
@@ -23,4 +22,5 @@
   ];
 
   programs.hyprland.enable = true;
+  programs.hyprlock.enable = true;
 }

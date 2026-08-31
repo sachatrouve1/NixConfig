@@ -39,13 +39,6 @@ hl.env("OZONE_PLATFORM_HINT", "wayland")
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "x11")
 hl.env("ELECTRON_ENABLE_OZONE", "1")
 
--- NVIDIA
-
-hl.env("AQ_DRM_DEVICES", "/dev/dri/card2:/dev/dri/card1")
-hl.env("LIBVA_DRIVER_NAME", "nvidia")
-hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
-hl.env("GBM_BACKEND", "nvidia-drm")
-
 -- AUTOSTART
 
 hl.on("hyprland.start", function()
@@ -59,6 +52,4 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("wl-paste --type image --watch cliphist store")
 	hl.exec_cmd("awww-daemon")
 	hl.exec_cmd("hypridle")
-	-- hl.exec_cmd("hyprctl setcursor Bibata-Original-Classic 20")
-	-- hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-theme Bibata-Original-Classic")
 end)

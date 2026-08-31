@@ -1,0 +1,9 @@
+[Nemo Action]
+Active=true
+Name=Set theme
+Comment=Set wallpaper and color theme
+Exec=/home/sacha/.local/share/bin/set_wallpaper.sh %F
+Icon-Name=help-about
+Selection=s
+Extensions=any;
+Mimetypes=image/*;video/*;

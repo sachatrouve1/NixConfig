@@ -5,18 +5,17 @@ local configPath = os.getenv("HOME") .. "/nixconfig"
 
 local term = "foot"
 local editor = "code"
-local file = "thunar"
+local file = "nemo"
 local browser = "librewolf"
 
 -- Window / Session actions
 hl.bind("SUPER + Q", hl.dsp.exec_cmd(scrPath .. "/dontkillsteam.sh"), { repeating = true })
 
-
 hl.bind("ALT + F4", hl.dsp.window.close())
 hl.bind("SUPER + ALT + Delete", hl.dsp.exit())
 hl.bind("SUPER + W", hl.dsp.window.float({ action = "toggle" }))
 hl.bind("SUPER + G", hl.dsp.group.toggle())
-hl.bind("SUPER + Delete", hl.dsp.exec_cmd("loginctl lock-session"))
+hl.bind("SUPER + Delete", hl.dsp.exec_cmd("pidof hyprlock || hyprlock"))
 hl.bind("SUPER + SHIFT + F", hl.dsp.exec_cmd(scrPath .. "/windowpin.sh"))
 hl.bind("SUPER + Backspace", hl.dsp.exec_cmd(scrPath .. "/wlogout.sh"))
 hl.bind("CTRL + ALT + W", hl.dsp.exec_cmd("pkill -9 waybar || waybar"))
@@ -29,9 +28,9 @@ hl.bind("SUPER + E", hl.dsp.exec_cmd(file))
 hl.bind("SUPER + C", hl.dsp.exec_cmd(term .. " -e " .. editor))
 hl.bind("SUPER + F", hl.dsp.exec_cmd(browser))
 hl.bind("CTRL + SHIFT + Escape", hl.dsp.exec_cmd(term .. " -e btop"))
-hl.bind("SUPER + D", hl.dsp.exec_cmd("__GLX_VENDOR_LIBRARY_NAME=intel vesktop"))
-hl.bind("SUPER + M", hl.dsp.exec_cmd("__GLX_VENDOR_LIBRARY_NAME=intel spotify"))
-hl.bind("SUPER + S", hl.dsp.exec_cmd("__GLX_VENDOR_LIBRARY_NAME=intel steam"))
+hl.bind("SUPER + D", hl.dsp.exec_cmd("vesktop"))
+hl.bind("SUPER + M", hl.dsp.exec_cmd("spotify"))
+hl.bind("SUPER + S", hl.dsp.exec_cmd("steam"))
 hl.bind("CTRL + Escape", hl.dsp.exec_cmd("hyprpicker -a -f rgb &"))
 hl.bind("CTRL + code:49", hl.dsp.exec_cmd("kruler"))
 
@@ -188,4 +187,5 @@ hl.bind("SUPER + code:20", function()
 	change_zoom(0.9)
 end, { repeating = true })
 
-hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("loginctl lock-session"), { locked = true })
+hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("pidof hyprlock || hyprlock"), { locked = true })
+hl.bind("switch:off:Lid Switch", hl.dsp.dpms({ state = "on" }), { locked = true })

@@ -64,14 +64,12 @@ hl.config({
 		disable_splash_rendering = true,
 		force_default_wallpaper = 0,
 		disable_watchdog_warning = true,
+		key_press_enables_dpms = true,
+		mouse_move_enables_dpms = true,
 	},
 
 	xwayland = {
 		force_zero_scaling = true,
-	},
-
-	debug = {
-		damage_tracking = false,
 	},
 })
 
