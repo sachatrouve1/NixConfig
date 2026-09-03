@@ -86,6 +86,8 @@
     cabextract
     d2
     killall
+    tetris
+    adwaita-fonts
 
     (pkgs.writeShellScriptBin "pdftotext" ''
       for file in "''$@"; do
@@ -123,5 +125,6 @@
     proton-vpn
     lutris
     protontricks
+    inkscape
   ];
 }

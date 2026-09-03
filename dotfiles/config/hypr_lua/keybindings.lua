@@ -34,9 +34,8 @@ hl.bind("SUPER + S", hl.dsp.exec_cmd("steam"))
 hl.bind("CTRL + Escape", hl.dsp.exec_cmd("hyprpicker -a -f rgb &"))
 hl.bind("CTRL + code:49", hl.dsp.exec_cmd("kruler"))
 
--- Rofi menus
-hl.bind("SUPER + A", hl.dsp.exec_cmd("pkill rofi || rofi -show drun -modi drun,filebrowser,run,window"))
-hl.bind("SUPER + Tab", hl.dsp.exec_cmd("pkill rofi || rofi -show window -modi window"))
+-- menus
+hl.bind("SUPER + A", hl.dsp.exec_cmd("wofi --show drun"))
 hl.bind("SUPER + V", hl.dsp.exec_cmd(scrPath .. "/clipManager.sh"))
 
 -- Notifications

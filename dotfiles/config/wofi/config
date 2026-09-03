@@ -1,0 +1,16 @@
+# ~/.config/wofi/config
+mode=drun
+show=drun
+width=900
+height=900
+location=center
+prompt=Search...
+filter_rate=100
+allow_images=true
+image_size=24
+dynamic_lines=false
+hide_scroll=true
+layer=overlay
+no_actions=true
+term=foot
+insensitive=true

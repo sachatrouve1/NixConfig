@@ -1,0 +1,93 @@
+/* ~/.config/wofi/style.css */
+
+window {
+    margin: 0px;
+    background-color: transparent;
+    font-family: "JetBrainsMono Nerd Font", "Noto Sans", sans-serif;
+    font-size: 13px;
+}
+
+#window {
+    background-color: transparent;
+}
+
+#outer-box {
+    margin: 0px;
+    padding: 0px;
+    background-image: url("@HOME@/.config/wofi/nix_logo.png");
+    background-size: 800px 800px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+#input {
+    margin: 260px 240px 10px 240px;
+    border: none;
+    border-radius: 12px;
+    color: #ffffff;
+    background-color: rgba(22, 25, 37, 0.88);
+    padding: 8px 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    outline: none;
+}
+
+#input:focus {
+    box-shadow: 0 0 0 1px #7ebae4;
+}
+
+#input image {
+    color: #7ebae4;
+    margin-right: 6px;
+}
+
+#scroll {
+    margin: 0px 240px 260px 240px;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+}
+
+scrollbar,
+scrollbar * {
+    min-width: 0px;
+    min-height: 0px;
+    opacity: 0;
+}
+
+#inner-box {
+    margin: 0px;
+    border: none;
+    background-color: rgba(22, 25, 37, 0.88);
+    border-radius: 12px;
+    padding: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+#entry {
+    border: none;
+    border-radius: 8px;
+    padding: 5px 8px;
+    margin: 2px 0px;
+    background-color: transparent;
+}
+
+#entry:selected {
+    background-color: #5277c3;
+    outline: none;
+}
+
+#text {
+    margin: 0px 4px;
+    color: #e2e8f0;
+}
+
+#text:selected {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#img {
+    margin-right: 8px;
+    background-color: transparent;
+}

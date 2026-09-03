@@ -15,6 +15,7 @@
 
     waybar
     rofi
+    wofi
     pywal
     pywalfox-native
     grim
@@ -64,7 +65,12 @@
   xdg.configFile."gtk-4.0".source = ../../dotfiles/config/gtk-4.0;
   xdg.configFile.hypr.source = ../../dotfiles/config/hypr_lua;
   xdg.configFile.rofi.source = ../../dotfiles/config/rofi;
-  xdg.configFile."wal/hooks".source = ../../dotfiles/config/wal/hooks;
+  xdg.configFile."wofi/config".source = ../../dotfiles/config/wofi/config;
+  xdg.configFile."wofi/nix_logo.png".source = ../../dotfiles/config/wofi/nix_logo.png;
+  xdg.configFile."wofi/style.css".text = builtins.replaceStrings
+    [ "@HOME@" ]
+    [ config.home.homeDirectory ]
+      (builtins.readFile ../../dotfiles/config/wofi/style.css);
   xdg.configFile."wal/templates".source = ../../dotfiles/config/wal/templates;
   xdg.configFile.waybar.source = ../../dotfiles/config/waybar;
   xdg.configFile.wlogout.source = ../../dotfiles/config/wlogout;

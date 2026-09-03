@@ -19,6 +19,7 @@
     ../services/wine.nix
     ../services/bentopdf.nix
     ../services/ollama.nix
+    ../services/mariadb.nix
   ];
 
   programs.hyprland.enable = true;
