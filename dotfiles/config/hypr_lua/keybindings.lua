@@ -7,7 +7,7 @@ local term = "foot"
 local editor = "code"
 local file = "nemo"
 local browser = "librewolf"
-local lockscreen = "hyprlock"
+local lockscreen = "pidof hyprlock || hyprlock"
 
 -- Window / Session actions
 hl.bind("SUPER + Q", hl.dsp.exec_cmd(scrPath .. "/dontkillsteam.sh"), { repeating = true })
@@ -26,7 +26,7 @@ hl.bind("F12", hl.dsp.window.fullscreen())
 -- Application shortcuts
 hl.bind("SUPER + RETURN", hl.dsp.exec_cmd(term))
 hl.bind("SUPER + E", hl.dsp.exec_cmd(file))
-hl.bind("SUPER + C", hl.dsp.exec_cmd(term .. " -e " .. editor))
+hl.bind("SUPER + C", hl.dsp.exec_cmd(editor))
 hl.bind("SUPER + F", hl.dsp.exec_cmd(browser))
 hl.bind("CTRL + SHIFT + Escape", hl.dsp.exec_cmd(term .. " -e btop"))
 hl.bind("SUPER + D", hl.dsp.exec_cmd("vesktop"))

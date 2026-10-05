@@ -3,7 +3,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   home.packages = [
     pkgs.lsd
     pkgs.fzf
@@ -13,10 +14,10 @@
     enable = true;
 
     plugins = [
-    {
-      name = "pure";
-      src = pkgs.fishPlugins.pure.src;
-    }
+      {
+        name = "pure";
+        src = pkgs.fishPlugins.pure.src;
+      }
     ];
 
     shellInit = ''
@@ -58,7 +59,7 @@
       dockerclean = "sudo docker system prune -a";
       journalclean = "sudo journalctl --vacuum-time=7d";
       bdd = "nvim +':DBUI' ";
-      avante = "nvim -c 'lua vim.defer_fn(function()require(\"avante.api\").zen_mode()end, 100)'";
+      # avante = "nvim -c 'lua vim.defer_fn(function()require(\"avante.api\").zen_mode()end, 100)'";
       ls = "eza -1 --icons=auto";
       c = "clear";
       l = "eza -lh --icons=auto";
@@ -85,6 +86,6 @@
     enableZshIntegration = false;
     enableBashIntegration = false;
     enableFishIntegration = true;
-    options = ["--cmd cd"];
+    options = [ "--cmd cd" ];
   };
 }

@@ -10,7 +10,7 @@ wallpaper=$1
 cp $wallpaper ~/.cache/wallpaper.png
 awww img -t 'grow' $wallpaper
 echo "Wallpaper $wallpaper applied."
-wal -n -i $wallpaper
+wal -n --contrast 4.0 -i $wallpaper
 echo "Theme applied."
 ~/.config/wal/hooks/bordercolor.sh
 echo "Windows border color added."

@@ -23,9 +23,13 @@ in
     capSysNice = false;
   };
 
+  environment.sessionVariables = {
+    GAMEMODERUNEXEC = "nvidia-offload";
+  };
+
   environment.systemPackages = with pkgs; [
     mangohud
-    pkgs-9-4.prismlauncher
+    (nvidiaOffload pkgs-9-4.prismlauncher)
   ];
 
   hardware.graphics = {

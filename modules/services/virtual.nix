@@ -1,4 +1,9 @@
-{ config, pkgs, userName, ... }:
+{
+  config,
+  pkgs,
+  userName,
+  ...
+}:
 {
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;

@@ -1,4 +1,9 @@
-{ config, userName, pkgs, ... }:
+{
+  config,
+  userName,
+  pkgs,
+  ...
+}:
 {
   imports = [
     ../../../home-modules/base.nix
@@ -20,6 +25,7 @@
   home.packages = with pkgs; [
     fd
     ripgrep
+    exfat
     cmake
     python314
     tree-sitter
@@ -88,7 +94,7 @@
     killall
     tetris
     adwaita-fonts
-
+    localsend
     (pkgs.writeShellScriptBin "pdftotext" ''
       for file in "''$@"; do
         if [ -f "''$file" ]; then
@@ -110,8 +116,8 @@
     kdePackages.okular
     kdePackages.kruler
     jetbrains.idea
+    jetbrains.phpstorm
     libreoffice
-    # mongodb-compass
     qbittorrent
     pinta
     gimp
@@ -123,7 +129,6 @@
     tor-browser
     obs-studio
     proton-vpn
-    lutris
     protontricks
     inkscape
   ];

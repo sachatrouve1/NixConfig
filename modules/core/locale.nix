@@ -24,4 +24,3 @@
 
   console.keyMap = "fr";
 }
-

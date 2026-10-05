@@ -42,6 +42,8 @@
             {
               nixpkgs.overlays = [
                 nix-cachyos-kernel.overlays.pinned
+                (import ./overlays/nvidia-offload.nix)
+                (import ./overlays/playwright.nix)
               ];
               nix.settings = {
                 extra-substituters = [
