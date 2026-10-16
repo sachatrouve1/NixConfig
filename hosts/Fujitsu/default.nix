@@ -1,4 +1,10 @@
-{ config, pkgs, userName, hostName, ... }:
+{
+  config,
+  pkgs,
+  userName,
+  hostName,
+  ...
+}:
 {
   imports = [
     ./hardware-configuration.nix
@@ -7,7 +13,7 @@
     ../../modules/profiles/gaming.nix
   ];
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = if useCachy then pkgs.linuxPackages_cachyos else pkgs.linuxPackages_zen;
 
   networking.hostName = hostName; # Define your hostname.
 
@@ -15,8 +21,12 @@
   users.users.${userName} = {
     isNormalUser = true;
     description = userName;
-    extraGroups = [ "networkmanager" "wheel" "kvm" ];
-    packages = with pkgs; [];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "kvm"
+    ];
+    packages = with pkgs; [ ];
   };
 
   # This value determines the NixOS release from which the default

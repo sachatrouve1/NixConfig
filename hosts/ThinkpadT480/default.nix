@@ -1,4 +1,11 @@
-{ config, pkgs, userName, hostName, ... }:
+{
+  config,
+  pkgs,
+  userName,
+  hostName,
+  useCachy,
+  ...
+}:
 {
   imports = [
     ./hardware-configuration.nix
@@ -7,8 +14,7 @@
     ../../modules/profiles/gaming.nix
   ];
 
-  # boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
+  boot.kernelPackages = if useCachy then pkgs.linuxPackages_cachyos else pkgs.linuxPackages_zen;
 
   networking.hostName = hostName; # Define your hostname.
 
@@ -16,8 +22,14 @@
   users.users.${userName} = {
     isNormalUser = true;
     description = userName;
-    extraGroups = [ "networkmanager" "wheel" "kvm" "dialout" "uucp" ];
-    packages = with pkgs; [];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "kvm"
+      "dialout"
+      "uucp"
+    ];
+    packages = with pkgs; [ ];
   };
 
   services = {

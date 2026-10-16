@@ -17,7 +17,6 @@
     ../services/nix-ld.nix
     ../services/virtual.nix
     ../services/wine.nix
-    ../services/bentopdf.nix
     ../services/ollama.nix
     ../services/mariadb.nix
   ];

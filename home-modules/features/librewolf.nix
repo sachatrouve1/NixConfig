@@ -2,7 +2,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   programs.firefox = {
     enable = true;
     configPath = ".mozilla/firefox";
@@ -20,7 +21,7 @@
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
         };
 
-        # Pywalfox
+        # # Pywalfox
         # "pywalfox@frewacom.org" = {
         #   install_url = "https://addons.mozilla.org/firefox/downloads/latest/pywalfox/latest.xpi";
         #   installation_mode = "force_installed";
@@ -44,11 +45,11 @@
         #   installation_mode = "force_installed";
         # };
         #
-        # # I still don't care about cookies
-        # "idcac-pub@guus.ninja" = {
-        #   install_url = "https://addons.mozilla.org/firefox/downloads/latest/istilldontcareaboutcookies/latest.xpi";
-        #   installation_mode = "force_installed";
-        # };
+        # I still don't care about cookies
+        "idcac-pub@guus.ninja" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/istilldontcareaboutcookies/latest.xpi";
+          installation_mode = "force_installed";
+        };
         #
         # # Search by Image
         # "{2e5ff8c8-32fe-46d0-9fc8-6b8986621f3c}" = {
@@ -68,11 +69,11 @@
         #   installation_mode = "force_installed";
         # };
 
-        # # Violentmonkey
-        # "{aecec67f-0d10-4fa7-b7c7-609a2db280cf}" = {
-        #   install_url = "https://addons.mozilla.org/firefox/downloads/latest/violentmonkey/latest.xpi";
-        #   installation_mode = "force_installed";
-        # };
+        # Violentmonkey
+        "{aecec67f-0d10-4fa7-b7c7-609a2db280cf}" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/violentmonkey/latest.xpi";
+          installation_mode = "force_installed";
+        };
         #
         # # ClearURLs
         # "{74145f27-f039-47ce-a470-a662b129930a}" = {

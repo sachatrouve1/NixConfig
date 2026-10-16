@@ -38,6 +38,7 @@
     vue-language-server
     prettier
     clang-tools
+    javaPackages.compiler.temurin-bin.jdk-25
     live-server
     sqlcmd
     gnumake

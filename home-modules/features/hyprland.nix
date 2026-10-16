@@ -17,7 +17,6 @@
     rofi
     wofi
     pywal
-    pywalfox-native
     grim
     slurp
     wl-clipboard
@@ -71,8 +70,7 @@
   xdg.configFile.wlogout.source = ../../dotfiles/config/wlogout;
   xdg.configFile."wofi/config".source = ../../dotfiles/config/wofi/config;
   xdg.configFile."wofi/nix_logo.png".source = ../../dotfiles/config/wofi/nix_logo.png;
-  xdg.configFile."wofi/style.css".text = builtins.replaceStrings
-    [ "@HOME@" ]
-    [ config.home.homeDirectory ]
+  xdg.configFile."wofi/style.css".text =
+    builtins.replaceStrings [ "@HOME@" ] [ config.home.homeDirectory ]
       (builtins.readFile ../../dotfiles/config/wofi/style.css);
 }
