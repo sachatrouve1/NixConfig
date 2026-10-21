@@ -10,14 +10,33 @@ local browser = "librewolf"
 local lockscreen = "pidof hyprlock || hyprlock"
 
 -- Window / Session actions
-hl.bind("SUPER + Q", hl.dsp.exec_cmd(scrPath .. "/dontkillsteam.sh"), { repeating = true })
 
-hl.bind("ALT + F4", hl.dsp.window.close())
+local function closeAllWindows()
+	local windows = hl.get_windows()
+
+	for _, w in pairs(windows) do
+		hl.dispatch(hl.dsp.window.close({ window = w }))
+	end
+end
+
+local function closeAllWindowsCurrentWorkspace()
+	local cws = hl.get_active_workspace()
+	local windows = hl.get_windows({ workspace = cws })
+
+	for _, w in pairs(windows) do
+		hl.dispatch(hl.dsp.window.close({ window = w }))
+	end
+end
+
+hl.bind("SUPER + Q", hl.dsp.window.close())
+hl.bind("ALT + F4", hl.dsp.window.kill())
+hl.bind("SUPER + SHIFT + Q", closeAllWindowsCurrentWorkspace)
+hl.bind("SUPER + CTRL + SHIFT + Q", closeAllWindows)
 hl.bind("SUPER + ALT + Delete", hl.dsp.exit())
 hl.bind("SUPER + W", hl.dsp.window.float({ action = "toggle" }))
 hl.bind("SUPER + G", hl.dsp.group.toggle())
 hl.bind("SUPER + Delete", hl.dsp.exec_cmd(lockscreen))
-hl.bind("SUPER + SHIFT + F", hl.dsp.exec_cmd(scrPath .. "/windowpin.sh"))
+hl.bind("SUPER + SHIFT + F", hl.dsp.window.pin())
 hl.bind("SUPER + Backspace", hl.dsp.exec_cmd(scrPath .. "/wlogout.sh"))
 hl.bind("CTRL + ALT + W", hl.dsp.exec_cmd("pkill -9 waybar || waybar"))
 hl.bind("SUPER + F12", hl.dsp.window.fullscreen({ mode = "maximized" }))
@@ -76,8 +95,26 @@ hl.bind(
 -- Extra
 hl.bind("XF86Display", hl.dsp.exec_cmd("nwg-displays"), { locked = true })
 hl.bind("XF86Tools", hl.dsp.exec_cmd("cd " .. configPath .. " && " .. term .. " -e nvim"), { locked = true })
-hl.bind("XF86Favorites", hl.dsp.exec_cmd(term .. " --hold -e fastfetch"), { locked = true })
 hl.bind("XF86Keyboard", hl.dsp.exec_cmd("hyprctl switchxkblayout at-translated-set-2-keyboard next"), { locked = true })
+
+hl.bind("XF86Favorites", function()
+	local game_mode = (hl.get_config("animations.enabled") == false)
+
+	if game_mode then
+		hl.exec_cmd("hyprctl reload")
+		return
+	end
+
+	hl.config({
+		animations = {
+			enabled = false,
+		},
+		decoration = {
+			blur = { enabled = false },
+			rounding = 0,
+		},
+	})
+end)
 
 -- Move between grouped windows
 hl.bind("SUPER + CTRL + H", hl.dsp.group.prev())
@@ -113,7 +150,7 @@ for i = 1, 10 do
 	local code = i + 9
 	hl.bind("SUPER + code:" .. code, hl.dsp.focus({ workspace = tostring(i) }))
 	hl.bind("SUPER + SHIFT + code:" .. code, hl.dsp.window.move({ workspace = tostring(i) }))
-	hl.bind("SUPER + ALT + code:" .. code, hl.dsp.window.move({ workspace = tostring(i), silent = true }))
+	hl.bind("SUPER + ALT + code:" .. code, hl.dsp.window.move({ workspace = tostring(i), follow = false }))
 end
 
 -- Relative & recent workspaces

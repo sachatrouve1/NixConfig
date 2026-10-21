@@ -67,7 +67,6 @@
     unrar
     foot
     vim
-    gnome-keyring
     difftastic
     nmap
     lazygit
@@ -124,7 +123,7 @@
     gimp
     element-desktop
     wireshark
-    audacity
+    # audacity
     vlc
     kdePackages.kleopatra
     tor-browser
@@ -132,5 +131,6 @@
     proton-vpn
     protontricks
     inkscape
+    seahorse
   ];
 }

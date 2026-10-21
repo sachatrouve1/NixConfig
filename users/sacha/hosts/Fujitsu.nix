@@ -1,4 +1,9 @@
-{ config, userName, pkgs, ... }:
+{
+  config,
+  userName,
+  pkgs,
+  ...
+}:
 {
   imports = [
     ../../../home-modules/base.nix
@@ -58,7 +63,6 @@
     unrar
     foot
     vim
-    gnome-keyring
     difftastic
     nmap
     lazygit
@@ -113,6 +117,7 @@
     tor-browser
     obs-studio
     thunderbird
+    seahorse
   ];
 
   home.sessionVariables = {
