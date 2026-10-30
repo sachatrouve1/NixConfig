@@ -1,13 +1,13 @@
 -- KEYBINDINGS
 
-local scrPath = os.getenv("HOME") .. "/.local/share/bin"
+local scrPath = os.getenv("HOME") .. "/.local/bin"
 local configPath = os.getenv("HOME") .. "/nixconfig"
 
 local term = "foot"
 local editor = "code"
 local file = "nemo"
 local browser = "librewolf"
-local lockscreen = "pidof hyprlock || hyprlock"
+local lockscreen_cmd = "pidof hyprlock || hyprlock"
 
 -- Window / Session actions
 
@@ -31,11 +31,11 @@ end
 hl.bind("SUPER + Q", hl.dsp.window.close())
 hl.bind("ALT + F4", hl.dsp.window.kill())
 hl.bind("SUPER + SHIFT + Q", closeAllWindowsCurrentWorkspace)
-hl.bind("SUPER + CTRL + SHIFT + Q", closeAllWindows)
+hl.bind("SUPER + CTRL + SHIFT + Q + DELETE", closeAllWindows)
 hl.bind("SUPER + ALT + Delete", hl.dsp.exit())
 hl.bind("SUPER + W", hl.dsp.window.float({ action = "toggle" }))
 hl.bind("SUPER + G", hl.dsp.group.toggle())
-hl.bind("SUPER + Delete", hl.dsp.exec_cmd(lockscreen))
+hl.bind("SUPER + Delete", hl.dsp.exec_cmd(lockscreen_cmd))
 hl.bind("SUPER + SHIFT + F", hl.dsp.window.pin())
 hl.bind("SUPER + Backspace", hl.dsp.exec_cmd(scrPath .. "/wlogout.sh"))
 hl.bind("CTRL + ALT + W", hl.dsp.exec_cmd("pkill -9 waybar || waybar"))
@@ -203,7 +203,7 @@ hl.bind("SUPER + Z", hl.dsp.window.drag(), { mouse = true })
 hl.bind("SUPER + X", hl.dsp.window.resize(), { mouse = true })
 
 -- Special workspace (scratchpad)
-hl.bind("SUPER + ALT + code:49", hl.dsp.window.move({ workspace = "special:magic", silent = true }))
+hl.bind("SUPER + ALT + code:49", hl.dsp.window.move({ workspace = "special:magic", follow = false }))
 hl.bind("SUPER + SHIFT + code:49", hl.dsp.window.move({ workspace = "special:magic" }))
 hl.bind("SUPER + code:49", hl.dsp.workspace.toggle_special("magic"))
 

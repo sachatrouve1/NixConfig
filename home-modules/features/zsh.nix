@@ -2,7 +2,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   home.packages = [
     pkgs.lsd
   ];
@@ -14,7 +15,7 @@
       autoload -Uz compinit
       compinit -C
     '';
-    
+
     zprof.enable = false;
     enableCompletion = true;
     autosuggestion.enable = true;
@@ -95,7 +96,7 @@
       mkdir = "mkdir -p";
       search = "sudo find . -iname ";
       searchin = "sudo grep -rnw . -e ";
-      setwallpaper = "~/.local/share/bin/set_wallpaper.sh ";
+      setwallpaper = "~/.local/bin/set_wallpaper.sh ";
       startweb = "sudo systemctl start httpd && systemctl status httpd && sudo systemctl start mariadb && systemctl status mariadb";
       rmnot = "sudo ~/rmnot.sh";
     };
@@ -106,6 +107,6 @@
     enableZshIntegration = true;
     enableBashIntegration = true;
     enableFishIntegration = true;
-    options = ["--cmd cd"];
+    options = [ "--cmd cd" ];
   };
 }

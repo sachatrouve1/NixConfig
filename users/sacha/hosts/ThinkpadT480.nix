@@ -126,7 +126,6 @@
     # audacity
     vlc
     kdePackages.kleopatra
-    tor-browser
     obs-studio
     proton-vpn
     protontricks

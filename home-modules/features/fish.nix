@@ -74,10 +74,10 @@
       mkdir = "mkdir -p";
       search = "sudo find . -iname ";
       searchin = "sudo grep -rnw . -e ";
-      setwallpaper = "~/.local/share/bin/set_wallpaper.sh ";
+      setwallpaper = "~/.local/bin/set_wallpaper.sh ";
       startweb = "sudo systemctl start httpd && systemctl status httpd && sudo systemctl start mariadb && systemctl status mariadb";
-      rmnot = "sudo ~/.local/share/bin/rmnot.sh";
-      topng = "~/.local/share/bin/topng.sh";
+      rmnot = "sudo ~/.local/bin/rmnot.sh";
+      topng = "~/.local/bin/topng.sh";
     };
   };
 

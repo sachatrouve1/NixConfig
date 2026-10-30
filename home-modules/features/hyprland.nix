@@ -45,8 +45,8 @@
   ];
 
   # Copy scripts
-  home.file.".local/share/bin" = {
-    source = ../../dotfiles/local/share/bin;
+  home.file.".local/bin" = {
+    source = ../../dotfiles/local/bin;
     recursive = true;
     executable = true;
   };
