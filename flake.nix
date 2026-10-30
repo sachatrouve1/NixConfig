@@ -1,14 +1,10 @@
 {
   description = "Multi-host config";
 
-  # nixConfig = {
-  #   extra-substituters = [
-  #     "https://attic.xuyh0120.win/lantian"
-  #   ];
-  #   extra-trusted-public-keys = [
-  #     "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
-  #   ];
-  # };
+  nixConfig = {
+    extra-substituters = [ "https://cache.lantian.pub/lantian" ];
+    extra-trusted-public-keys = [ "lantian:WVGO7vsRMSEN+h7Lp7kv6SAmrkEXgUGbbXm7jMDjBuQ=" ];
+  };
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -71,8 +67,8 @@
               ];
 
               nix.settings = {
-                extra-substituters = lib.optional useCachy "https://attic.xuyh0120.win/lantian";
-                extra-trusted-public-keys = lib.optional useCachy "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=";
+                nix.settings.substituters = [ "https://cache.lantian.pub/lantian" ];
+                nix.settings.trusted-public-keys = [ "lantian:WVGO7vsRMSEN+h7Lp7kv6SAmrkEXgUGbbXm7jMDjBuQ=" ];
                 trusted-users = [
                   "root"
                   "@wheel"
