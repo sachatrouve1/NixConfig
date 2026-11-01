@@ -2,7 +2,7 @@
 Active=true
 Name=To png
 Comment=Convert image to png
-Exec=/home/sacha/.local/bin/topng.sh %F
+Exec=/home/sacha/.local/hypr/bin/topng.sh %F
 Icon-Name=help-about
 Selection=s
 Extensions=any;

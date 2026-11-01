@@ -1,6 +1,6 @@
 -- KEYBINDINGS
 
-local scrPath = os.getenv("HOME") .. "/.local/bin"
+local scrPath = os.getenv("HOME") .. "/.local/hypr/bin"
 local configPath = os.getenv("HOME") .. "/nixconfig"
 
 local term = "foot"

@@ -19,7 +19,7 @@ end
 
 -- ENV
 
-local scrPath = os.getenv("HOME") .. "/.local/bin"
+local scrPath = os.getenv("HOME") .. "/.local/hypr/bin"
 hl.env("PATH", (os.getenv("PATH") or "") .. ":" .. scrPath)
 hl.env("XCURSOR_THEME", "Bibata-Original-Classic")
 hl.env("XCURSOR_SIZE", "20")

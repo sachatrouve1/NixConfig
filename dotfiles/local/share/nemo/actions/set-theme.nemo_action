@@ -2,7 +2,7 @@
 Active=true
 Name=Set theme
 Comment=Set wallpaper and color theme
-Exec=/home/sacha/.local/bin/set_wallpaper.sh %F
+Exec=/home/sacha/.local/hypr/bin/set_wallpaper.sh %F
 Icon-Name=help-about
 Selection=s
 Extensions=any;

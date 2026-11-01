@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Original script by Eric Murphy
-# https://github.com/ericmurphyxyz/dotfiles/blob/master/.local/bin/battery-alert
+# https://github.com/ericmurphyxyz/dotfiles/blob/master/.local/hypr/bin/battery-alert
 #
 # Modified by Jesse Mirabel (@sejjy)
 # https://github.com/sejjy/mechabar
