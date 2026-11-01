@@ -15,7 +15,8 @@
     ../../modules/profiles/gaming.nix
   ];
 
-  boot.kernelPackages = if useCachy then pkgs.linuxPackages_cachyos else pkgs.linuxPackages_zen;
+  boot.kernelPackages =
+    if useCachy then pkgs.cachyosKernels.linuxPackages-cachyos-latest else pkgs.linuxPackages_zen;
 
   networking.hostName = hostName; # Define your hostname.
 
