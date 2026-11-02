@@ -96,7 +96,7 @@
       mkdir = "mkdir -p";
       search = "sudo find . -iname ";
       searchin = "sudo grep -rnw . -e ";
-      setwallpaper = "~/.local/bin/set_wallpaper.sh ";
+      setwallpaper = "~/.local/hypr/bin/set_wallpaper.sh ";
       startweb = "sudo systemctl start httpd && systemctl status httpd && sudo systemctl start mariadb && systemctl status mariadb";
       rmnot = "sudo ~/rmnot.sh";
     };

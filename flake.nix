@@ -44,17 +44,19 @@
 
             home-manager.nixosModules.home-manager
             {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = {
-                inherit
-                  inputs
-                  hostName
-                  userName
-                  useCachy
-                  ;
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = {
+                  inherit
+                    inputs
+                    hostName
+                    userName
+                    useCachy
+                    ;
+                };
+                users.${userName} = import ./users/${userName}/hosts/${hostName}.nix;
               };
-              home-manager.users.${userName} = import ./users/${userName}/hosts/${hostName}.nix;
             }
 
             ({ pkgs, ... }: {
