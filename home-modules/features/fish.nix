@@ -62,10 +62,11 @@
       # avante = "nvim -c 'lua vim.defer_fn(function()require(\"avante.api\").zen_mode()end, 100)'";
       ls = "eza -1 --icons=auto";
       c = "clear";
-      l = "eza -lh --icons=auto";
-      ll = "eza -lha --icons=auto --sort=name --group-directories-first";
+      l = "eza -lh --icons=auto --git";
+      ll = "eza -lha --icons=auto --sort=name --group-directories-first --git";
       ld = "eza -lhD --icons=auto";
       lt = "eza --icons=auto --tree";
+      lsize = "eza -lh --icons=auto --git --total-size";
       ".." = "cd ..";
       "..." = "cd ../..";
       ".3" = "cd ../../..";

@@ -13,6 +13,7 @@
     ../../modules/hardware/scanner.nix
     ../../modules/profiles/laptop.nix
     ../../modules/profiles/gaming.nix
+    ../../modules/services/tetrapod.nix
   ];
 
   boot.kernelPackages =
@@ -31,7 +32,6 @@
       "dialout"
       "uucp"
     ];
-    packages = with pkgs; [ ];
   };
 
   services = {

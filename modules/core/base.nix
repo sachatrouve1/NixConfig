@@ -1,16 +1,18 @@
-{ config, pkgs, ...}:
+{ config, pkgs, ... }:
 {
   imports = [
     ../services/overlays.nix
   ];
 
-  services.dbus.enable = true;
-  services.gnome.gnome-keyring.enable = true;
-  services.openssh.enable = true;
+  services = {
+    dbus.enable = true;
+    gnome.gnome-keyring.enable = true;
+    openssh.enable = true;
+  };
 
   security.sudo.extraConfig = ''
     Defaults insults
-    '';
+  '';
 
   nix.settings.auto-optimise-store = true;
 
@@ -19,10 +21,17 @@
   # Allow unfree packages (e.g., NVIDIA drivers)
   nixpkgs.config.allowUnfree = true;
 
+  nixpkgs.config.problems.handlers = {
+    "gtk+".broken = "warn";
+  };
+
   environment.systemPackages = with pkgs; [
     btop-cuda
     lm_sensors
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 }

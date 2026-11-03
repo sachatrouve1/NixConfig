@@ -23,6 +23,12 @@
       ripgrep
       # D2
       d2
+      # Rust
+      rust-analyzer
+      cargo
+      rustc
+      clippy
+      rustfmt
     ];
 
     plugins = with pkgs.vimPlugins; [
@@ -74,6 +80,8 @@
           vim-startuptime
           which-key-nvim
           d2-vim
+          rustaceanvim
+          crates-nvim
           {
             name = "LuaSnip";
             path = luasnip;

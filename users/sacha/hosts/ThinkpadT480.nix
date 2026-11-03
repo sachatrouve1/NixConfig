@@ -84,8 +84,8 @@
     whatweb
     weechat
     libqalculate
-    ngrok
     antigravity-cli
+    claude-code
     ffmpeg
     p7zip
     yt-dlp
