@@ -3,10 +3,14 @@
   systemd.user = {
     services.tetrapod = {
       description = "Get a daily new wallpaper from Nasa";
+      path = [
+        "/run/current-system/sw"
+        "/etc/profiles/per-user/${userName}"
+      ];
       serviceConfig = {
         Type = "oneshot";
-        WorkingDirectory = "/home/${userName}/Documents/coding/rust/Tetrapod";
-        ExecStart = "/home/${userName}/Documents/coding/rust/Tetrapod/target/release/Tetrapod";
+        WorkingDirectory = "/home/${userName}/.local/hypr/bin";
+        ExecStart = "/home/${userName}/.local/hypr/bin/Tetrapod";
       };
     };
 
@@ -14,7 +18,7 @@
       description = "Tetrapod timer";
       wantedBy = [ "timers.target" ];
       timerConfig = {
-        OnStartupSec = "5sec";
+        OnStartupSec = "30sec";
         OnUnitActiveSec = "1h";
         Persistent = true;
       };
