@@ -1,9 +1,8 @@
-{ config, pkgs, ... }:
-{
+_: {
   security.apparmor.enable = true;
 
   boot.kernel.sysctl = {
-    # Prevents from seeing the kernel addresses 
+    # Prevents from seeing the kernel addresses
     "kernel.kptr_restrict" = 1;
     # Restricts the use of dmesg to admins
     "kernel.dmesg_restrict" = 1;

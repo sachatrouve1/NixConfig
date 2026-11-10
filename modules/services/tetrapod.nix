@@ -1,4 +1,4 @@
-{ config, userName, ... }:
+{ userName, ... }:
 {
   systemd.user = {
     services.tetrapod = {

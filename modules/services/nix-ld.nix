@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   programs.nix-ld = {
     enable = true;
@@ -10,7 +10,7 @@
       wayland
       icu
       libx11
-      
+
       # Chromium - Playwrite dependencies
       alsa-lib
       at-spi2-atk

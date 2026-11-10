@@ -1,6 +1,4 @@
-{ pkgs, config, ... }:
-
-{
+_: {
   services.bentopdf = {
     enable = true;
     # Configures the Nginx virtual host domain
@@ -13,4 +11,3 @@
     127.0.0.1 bento.pdf.com
   '';
 }
-

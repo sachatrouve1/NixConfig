@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [
     (nvidiaOffload supertuxkart)
@@ -14,8 +14,15 @@
     icon = "steam";
     terminal = false;
     type = "Application";
-    categories = [ "Network" "FileTransfer" "Game" ];
-    mimeType = [ "x-scheme-handler/steam" "x-scheme-handler/steamlink" ];
+    categories = [
+      "Network"
+      "FileTransfer"
+      "Game"
+    ];
+    mimeType = [
+      "x-scheme-handler/steam"
+      "x-scheme-handler/steamlink"
+    ];
     settings = {
       PrefersNonDefaultGPU = "false";
       X-KDE-RunOnDiscreteGpu = "false";

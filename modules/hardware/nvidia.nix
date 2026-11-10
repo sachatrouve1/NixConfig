@@ -1,32 +1,34 @@
-{ config, pkgs, userName, ... }:
+{ userName, ... }:
 {
-  # Nvidia graphics
-  hardware.graphics = {
-    enable = true;
-  };
+  services.xserver.videoDrivers = [ "nvidia" ];
 
-  services.xserver.videoDrivers = ["nvidia"];
-
-  hardware.nvidia = {
-    # Modesetting is required.
-    modesetting.enable = true;
-    # Enable the Nvidia settings menu,
-    # accessible via `nvidia-settings`.
-    nvidiaSettings = true;
-    open = false;
-
-    prime = {
-      offload = {
-        enable = true;
-        enableOffloadCmd = true;
-      };
-      intelBusId = "PCI:0:2:0";
-      nvidiaBusId = "PCI:1:0:0";
+  hardware = {
+    # Nvidia graphics
+    graphics = {
+      enable = true;
     };
-  };
 
-  # Luminosity for external display:
-  hardware.i2c.enable = true;
+    nvidia = {
+      # Modesetting is required.
+      modesetting.enable = true;
+      # Enable the Nvidia settings menu,
+      # accessible via `nvidia-settings`.
+      nvidiaSettings = true;
+      open = false;
+
+      prime = {
+        offload = {
+          enable = true;
+          enableOffloadCmd = true;
+        };
+        intelBusId = "PCI:0:2:0";
+        nvidiaBusId = "PCI:1:0:0";
+      };
+    };
+
+    # Luminosity for external display:
+    i2c.enable = true;
+  };
 
   users.users.${userName}.extraGroups = [ "i2c" ];
 }

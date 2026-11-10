@@ -32,6 +32,7 @@
       bibata-cursors
       xdotool
       jq
+      wallust
 
       nerd-fonts.jetbrains-mono
       nerd-fonts.caskaydia-cove

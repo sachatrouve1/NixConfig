@@ -23,7 +23,7 @@
     }@inputs:
     let
       system = "x86_64-linux";
-      lib = nixpkgs.lib;
+      inherit (nixpkgs) lib;
 
       # Generate configs
       mkHost =
@@ -60,13 +60,12 @@
             }
 
             ({ pkgs, ... }: {
+              # Apply CachyOS overlay if useCachy = true
               nixpkgs.overlays = [
-              ] # Apply CachyOS overlay if useCachy = true
-              ++ lib.optional useCachy nix-cachyos-kernel.overlays.pinned
-              ++ [
                 (import ./overlays/nvidia-offload.nix)
                 (import ./overlays/playwright.nix)
-              ];
+              ]
+              ++ lib.optional useCachy nix-cachyos-kernel.overlays.pinned;
 
               nix.settings = {
                 substituters = [ "https://cache.lantian.pub/lantian" ];

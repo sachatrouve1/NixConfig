@@ -1,8 +1,9 @@
-{ pkgs, inputs, userName, ... }:
+{ pkgs, userName, ... }:
 let
   tuigreet = "${pkgs.tuigreet}/bin/tuigreet";
   session = "${pkgs.hyprland}/bin/Hyprland";
-in {
+in
+{
   services.greetd = {
     enable = true;
     settings = {

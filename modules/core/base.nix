@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   imports = [
     ../services/overlays.nix
@@ -7,7 +7,6 @@
   services = {
     dbus.enable = true;
     gnome.gnome-keyring.enable = true;
-    openssh.enable = true;
   };
 
   security.sudo.extraConfig = ''

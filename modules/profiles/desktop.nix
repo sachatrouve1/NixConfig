@@ -1,5 +1,4 @@
-{ config, ... }:
-{
+_: {
   imports = [
     ../hardware/audio.nix
     ../hardware/bluetooth.nix

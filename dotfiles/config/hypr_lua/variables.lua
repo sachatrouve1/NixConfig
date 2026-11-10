@@ -38,7 +38,7 @@ hl.config({
 	input = {
 		kb_layout = "fr, us",
 		kb_variant = "oss,",
-		kb_options = "lv3:ralt_switch",
+		kb_options = "lv3:ralt_switch, caps:shiftlock",
 		accel_profile = "adaptive",
 		force_no_accel = false,
 		sensitivity = 0.3,

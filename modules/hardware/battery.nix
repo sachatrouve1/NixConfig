@@ -1,23 +1,25 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
-  # service to show battery information
-  services.upower.enable = true;
+  services = {
+    # service to show battery information
+    upower.enable = true;
 
-  # to get the permissions to change luminosity
-  services.udev.packages = [ pkgs.acpilight ];
+    # to get the permissions to change luminosity
+    udev.packages = [ pkgs.acpilight ];
 
-  # NetworkManager powersave
-  # networking.networkmanager.wifi.powersave = true;
+    # NetworkManager powersave
+    # networking.networkmanager.wifi.powersave = true;
 
-  services.auto-cpufreq.enable = true;
-  services.auto-cpufreq.settings = {
-    battery = {
-     governor = "powersave";
-     turbo = "never";
-    };
-    charger = {
-     governor = "performance";
-     turbo = "auto";
+    auto-cpufreq.enable = true;
+    auto-cpufreq.settings = {
+      battery = {
+        governor = "powersave";
+        turbo = "never";
+      };
+      charger = {
+        governor = "performance";
+        turbo = "auto";
+      };
     };
   };
 }

@@ -1,10 +1,4 @@
-{
-  config,
-  pkgs,
-  userName,
-  ...
-}:
-
+{ pkgs, userName, ... }:
 {
   hardware.sane = {
     enable = true;

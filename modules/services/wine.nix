@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
     # Standard Wine installation supporting both 32-bit and 64-bit applications

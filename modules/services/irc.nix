@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-{
+_: {
   services.inspircd = {
     enable = true;
     config = ''

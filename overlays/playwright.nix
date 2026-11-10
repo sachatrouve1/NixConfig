@@ -18,5 +18,5 @@ in
 {
   playwright = final.playwright-driver;
   playwright-driver = playwrightPkgs.playwright-core;
-  playwright-test = playwrightPkgs.playwright-test;
+  inherit (playwrightPkgs) playwright-test;
 }

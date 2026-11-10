@@ -1,4 +1,4 @@
-{ config, userName, ...  }:
+{ userName, ... }:
 {
   users.users.${userName}.extraGroups = [
     "docker"
