@@ -29,10 +29,6 @@ echo "Theme applied."
 echo "Windows border color added."
 ~/.config/wal/hooks/cava.sh
 echo "Cava theme applied."
-# pywalfox update
-# echo "Firefox theme updated."
-# pywal-spicetify Default
-# echo "Sptotify theme updated."
 pkill -9 waybar
 sleep 0.2
 hyprctl dispatch 'hl.dsp.exec_cmd("waybar")' >/dev/null 2>&1 || hyprctl dispatch exec waybar >/dev/null 2>&1 || systemd-run --user waybar >/dev/null 2>&1
